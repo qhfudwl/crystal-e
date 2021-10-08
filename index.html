@@ -6,122 +6,126 @@
         <title>크리스탈 e</title>
     </head>
     <body>
-        <header id="header">
-            <h1><a href="index.html" class="text_hidden">crystal-e</a></h1>
-            <form id="search">
-                <div id="searchWrap">
-                    <label for="s_write" class="hidden">검색창</label>
-                    <input type="text" id="s_write" placeholder="제품 검색">
-                    <label for="check" class="hidden">확인</label>
-                    <input type="submit" value="확인" id="check">
+        <div id="topWrap">
+            <header id="header">
+                <div id="headerWrap">
+                    <h1><a href="index.html" class="text_hidden">crystal-e</a></h1>
+                    <form id="search">
+                        <div id="searchWrap">
+                            <label for="s_write" class="hidden">검색창</label>
+                            <input type="text" id="s_write" placeholder="제품 검색">
+                            <label for="check" class="hidden">확인</label>
+                            <input type="submit" value="확인" id="check">
+                        </div>
+                    </form>
+                    <nav id="option">
+                        <h2 class="hidden">글자 크기, 장바구니 옵션</h2>
+                        <ul>
+                            <li id="text_size"><!-- a 태그는 block 처리를 해줘야 text-indent가 적용된다. -->
+                                <a href="#" class="down text_hidden">글자 크기 줄이기</a>
+                                <p>글자 크기</p>
+                                <a href="#" class="up text_hidden">글자 크기 키우기</a>
+                            </li>
+                            <li id="basket">
+                                <a href="#" class="text_hidden">장바구니</a>
+                                <p class="basket_count">0</p>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            </form>
-            <nav id="option">
-                <h2 class="hidden">글자 크기, 장바구니 옵션</h2>
-                <ul>
-                    <li id="text_size"><!-- a 태그는 block 처리를 해줘야 text-indent가 적용된다. -->
-                        <a href="#" class="down text_hidden">글자 크기 줄이기</a>
-                        <p>글자 크기</p>
-                        <a href="#" class="up text_hidden">글자 크기 키우기</a>
+            </header>
+            <nav id="menu">
+                <h2 class="hidden">주요 메뉴</h2>
+                <ul id="gnb">
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="#">회사 소개</a>
+                        <ul class="one_depth_snb">
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">조직도</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                        </ul>
                     </li>
-                    <li id="basket">
-                        <p class="text_hidden">장바구니</p>
-                        <p class="basket_count">0</p>
+                    <li class="on"><a href="#">제품 카테고리</a>
+                        <ul class="one_depth_snb">
+                            <li><a href="#">의류</a>
+                                <ul class="two_depth_snb">
+                                    <li><a href="#">패션 의류</a></li>
+                                    <li><a href="#">이너웨어</a></li>
+                                    <li><a href="#">수면 의류</a></li>
+                                    <li><a href="#">냉장고 의류</a></li>
+                                    <li><a href="#">아웃도어</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">뷰티</a>
+                                <ul class="two_depth_snb">
+                                    <li><a href="#">intube 화장품</a></li>
+                                    <li><a href="#">뷰티 소품/소도구</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">양말</a>
+                                <ul class="two_depth_snb">
+                                    <li><a href="#">등산/스포츠 양말</a></li>
+                                    <li><a href="#">패션/수면 양말</a></li>
+                                    <li><a href="#">신사/발가락 양말</a></li>
+                                    <li><a href="#">양말 선물 세트</a></li>
+                                    <li><a href="#">스타킹/타이즈/레깅스</a></li>
+                                    <li><a href="#">페이크 삭스/덧신</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">구강용품</a></li>
+                            <li><a href="#">잡화</a>
+                                <ul class="two_depth_snb">
+                                    <li><a href="#">모자/스카프/머플러</a></li>
+                                    <li><a href="#">생활 잡화</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">계절 용품</a>
+                                <ul class="two_depth_snb">
+                                    <li><a href="#">여름 용품</a></li>
+                                    <li><a href="#">겨울 용품</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">갤러리</a>
+                        <ul class="one_depth_snb">
+                            <li><a href="#">제품 진열</a>
+                                <ul class="two_depth_snb">
+                                    <li><a href="#">뷰티 소품</a></li>
+                                    <li><a href="#">양말</a></li>
+                                    <li><a href="#">스타킹</a></li>
+                                    <li><a href="#">의류</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">행사 진열</a>
+                                <ul class="two_depth_snb">
+                                    <li><a href="#">일반 행사</a></li>
+                                    <li><a href="#">하계 행사</a></li>
+                                    <li><a href="#">추계 행사</a></li>
+                                    <li><a href="#">동계 행사</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">마트 진열</a></li>
+                            <li><a href="#">구강용품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">커뮤니티</a>
+                        <ul class="one_depth_snb">
+                            <li><a href="#">업무 제휴 문의</a></li>
+                            <li><a href="#">고객 문의</a></li>
+                            <li><a href="#">공지 사항</a>
+                                <ul class="two_depth_snb">
+                                    <li><a href="#">전체</a></li>
+                                    <li><a href="#">회사 업무 관련</a></li>
+                                    <li><a href="#">이벤트</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
-        </header>
-        <nav id="menu">
-            <h2 class="hidden">주요 메뉴</h2>
-            <ul id="gnb">
-                <li><a href="index.html">home</a></li>
-                <li><a href="#">회사 소개</a>
-                    <ul class="one_depth_snb">
-                        <li><a href="#">인사말</a></li>
-                        <li><a href="#">연혁</a></li>
-                        <li><a href="#">조직도</a></li>
-                        <li><a href="#">오시는 길</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">제품 카테고리</a>
-                    <ul class="one_depth_snb">
-                        <li><a href="#">의류</a>
-                            <ul class="two_depth_snb">
-                                <li><a href="#">패션 의류</a></li>
-                                <li><a href="#">이너웨어</a></li>
-                                <li><a href="#">수면 의류</a></li>
-                                <li><a href="#">냉장고 의류</a></li>
-                                <li><a href="#">아웃도어</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">뷰티</a>
-                            <ul class="two_depth_snb">
-                                <li><a href="#">intube 화장품</a></li>
-                                <li><a href="#">뷰티 소품/소도구</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">양말</a>
-                            <ul class="two_depth_snb">
-                                <li><a href="#">등산/스포츠 양말</a></li>
-                                <li><a href="#">패션/수면 양말</a></li>
-                                <li><a href="#">신사/발가락 양말</a></li>
-                                <li><a href="#">양말 선물 세트</a></li>
-                                <li><a href="#">스타킹/타이즈/레깅스</a></li>
-                                <li><a href="#">페이크 삭스/덧신</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">구강용품</a></li>
-                        <li><a href="#">잡화</a>
-                            <ul class="two_depth_snb">
-                                <li><a href="#">모자/스카프/머플러</a></li>
-                                <li><a href="#">생활 잡화</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">계절 용품</a>
-                            <ul class="two_depth_snb">
-                                <li><a href="#">여름 용품</a></li>
-                                <li><a href="#">겨울 용품</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#">갤러리</a>
-                    <ul class="one_depth_snb">
-                        <li><a href="#">제품 진열</a>
-                            <ul class="two_depth_snb">
-                                <li><a href="#">뷰티 소품</a></li>
-                                <li><a href="#">양말</a></li>
-                                <li><a href="#">스타킹</a></li>
-                                <li><a href="#">의류</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">행사 진열</a>
-                            <ul class="two_depth_snb">
-                                <li><a href="#">일반 행사</a></li>
-                                <li><a href="#">하계 행사</a></li>
-                                <li><a href="#">추계 행사</a></li>
-                                <li><a href="#">동계 행사</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">마트 진열</a></li>
-                        <li><a href="#">구강용품</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">커뮤니티</a>
-                    <ul class="one_depth_snb">
-                        <li><a href="#">업무 제휴 문의</a></li>
-                        <li><a href="#">고객 문의</a></li>
-                        <li><a href="#">공지 사항</a>
-                            <ul class="two_depth_snb">
-                                <li><a href="#">전체</a></li>
-                                <li><a href="#">회사 업무 관련</a></li>
-                                <li><a href="#">이벤트</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        </div>
         <section id="main_slider">
             <h2 class="hidden">대표 제품 / 이벤트 슬라이더</h2>
             <nav id="main_slider_list">
