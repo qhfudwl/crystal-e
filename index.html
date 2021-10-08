@@ -8,31 +8,29 @@
     <body>
         <div id="topWrap">
             <header id="header">
-                <div id="headerWrap">
-                    <h1><a href="index.html" class="text_hidden">crystal-e</a></h1>
-                    <form id="search">
-                        <div id="searchWrap">
-                            <label for="s_write" class="hidden">검색창</label>
-                            <input type="text" id="s_write" placeholder="제품 검색">
-                            <label for="check" class="hidden">확인</label>
-                            <input type="submit" value="확인" id="check">
-                        </div>
-                    </form>
-                    <nav id="option">
-                        <h2 class="hidden">글자 크기, 장바구니 옵션</h2>
-                        <ul>
-                            <li id="text_size"><!-- a 태그는 block 처리를 해줘야 text-indent가 적용된다. -->
-                                <a href="#" class="down text_hidden">글자 크기 줄이기</a>
-                                <p>글자 크기</p>
-                                <a href="#" class="up text_hidden">글자 크기 키우기</a>
-                            </li>
-                            <li id="basket">
-                                <a href="#" class="text_hidden">장바구니</a>
-                                <p class="basket_count">0</p>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                <h1><a href="index.html" class="text_hidden">crystal-e</a></h1>
+                <form id="search">
+                    <div id="searchWrap">
+                        <label for="s_write" class="hidden">검색창</label>
+                        <input type="text" id="s_write" placeholder="제품 검색">
+                        <label for="check" class="hidden">확인</label>
+                        <input type="submit" value="확인" id="check">
+                    </div>
+                </form>
+                <nav id="option">
+                    <h2 class="hidden">글자 크기, 장바구니 옵션</h2>
+                    <ul>
+                        <li id="text_size"><!-- a 태그는 block 처리를 해줘야 text-indent가 적용된다. -->
+                            <a href="#" class="down text_hidden">글자 크기 줄이기</a>
+                            <p>글자 크기</p>
+                            <a href="#" class="up text_hidden">글자 크기 키우기</a>
+                        </li>
+                        <li id="basket">
+                            <a href="#" class="text_hidden">장바구니</a>
+                            <p class="basket_count">0</p>
+                        </li>
+                    </ul>
+                </nav>
             </header>
             <nav id="menu">
                 <h2 class="hidden">주요 메뉴</h2>
@@ -46,7 +44,7 @@
                             <li><a href="#">오시는 길</a></li>
                         </ul>
                     </li>
-                    <li class="on"><a href="#">제품 카테고리</a>
+                    <li><a href="#">제품 카테고리</a>
                         <ul class="one_depth_snb">
                             <li><a href="#">의류</a>
                                 <ul class="two_depth_snb">
@@ -128,7 +126,30 @@
         </div>
         <section id="main_slider">
             <h2 class="hidden">대표 제품 / 이벤트 슬라이더</h2>
-            <nav id="main_slider_list">
+            <ul id="main_sliderWrap">
+                <li class="slide1"><a href="#">
+                    <p>슬라이더1</p>
+                </a></li>
+                <li class="slide2"><a href="#">
+                    <p>슬라이더2</p>
+                </a></li>
+                <li class="slide3"><a href="#">
+                    <p>슬라이더3</p>
+                </a></li>
+                <li class="slide4"><a href="#">
+                    <p>슬라이더4</p>
+                </a></li>
+                <li class="slide5"><a href="#">
+                    <p>슬라이더5</p>
+                </a></li>
+                <li class="slide6"><a href="#">
+                    <p>슬라이더6</p>
+                </a></li>
+                <li class="slide7"><a href="#">
+                    <p>슬라이더7</p>
+                </a></li>
+            </ul>
+            <nav id="main_sliderList">
                 <h3 class="hidden">목록</h3>
                 <ul>
                     <li><a href="#">제품1</a></li>
@@ -173,773 +194,877 @@
             </section>
             <section id="new">
                 <h2>새로 나왔어요</h2>
-                <ul id="newList">
-                    <li class="nList1"><a href="#" data-imgPath="images/new_product1.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품1 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList2"><a href="#" data-imgPath="images/new_product2.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품2 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList3"><a href="#" data-imgPath="images/new_product3.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품3 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList4"><a href="#" data-imgPath="images/new_product4.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품4 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList5"><a href="#" data-imgPath="images/new_product5.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품5 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList6"><a href="#" data-imgPath="images/new_product6.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품6 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList7"><a href="#" data-imgPath="images/new_product7.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품7 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList8"><a href="#" data-imgPath="images/new_product8.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품8 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList9"><a href="#" data-imgPath="images/new_product9.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품9 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                    <li class="nList10"><a href="#" data-imgPath="images/new_product10.jpg">
-                        <div class="p_name">
-                            <p><strong>[브랜드] 상품10 이름</strong></p>
-                            <p>가격 : <strong>10,000</strong>원</p>
-                        </div>
-                        <div class="p_status">
-                            <p>리뷰 <em>00</em></p>
-                            <p>평점 <em>0.0</em>/5</p>
-                            <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                        </div>
-                    </a></li>
-                </ul>
-                <a href="#" id="new_move" class="text_hidden">신제품 리스트 위치 이동</a>
+                <div id="newListWrap">
+                    <ul id="newList">
+                        <li class="nList1"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품1">
+                            <div class="p_name">
+                                <p>[브랜드] 상품1 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList2"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품2">
+                            <div class="p_name">
+                                <p>[브랜드] 상품2 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList3"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품3">
+                            <div class="p_name">
+                                <p>[브랜드] 상품3 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList4"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품4">
+                            <div class="p_name">
+                                <p>[브랜드] 상품4 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList5"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품5">
+                            <div class="p_name">
+                                <p>[브랜드] 상품5 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList6"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품6">
+                            <div class="p_name">
+                                <p>[브랜드] 상품6 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList7"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품7">
+                            <div class="p_name">
+                                <p>[브랜드] 상품7 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList8"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품8">
+                            <div class="p_name">
+                                <p>[브랜드] 상품8 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList9"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품9">
+                            <div class="p_name">
+                                <p>[브랜드] 상품9 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="nList10"><a href="#">
+                            <img src="images/new/product.jpg" alt="상품10">
+                            <div class="p_name">
+                                <p>[브랜드] 상품10 이름</p>
+                                <p>가격 : <strong>10,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>00</em></p>
+                                <p>평점 <em>0.0</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                            </div>
+                        </a></li>
+                    </ul>
+                </div>
+                <div id="new_move">
+                    <div id="new_position">
+                        <a href="#" class="text_hidden">신제품 리스트 위치 이동</a>
+                    </div>
+                </div>
             </section>
             <section id="categoryBest">
                 <h2>카테고리 베스트</h2>
-                <section id="cbTap_cloth">
-                    <h3><a href="#">의류</a></h3>
-                    <ul id="cb_cloth_list" class="active">
-                        <li class="cbList1"><a href="#" data-imgPath="images/categoryBest_cloth1.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품1 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList2"><a href="#" data-imgPath="images/categoryBest_cloth2.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품2 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList3"><a href="#" data-imgPath="images/categoryBest_cloth3.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품3 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList4"><a href="#" data-imgPath="images/categoryBest_cloth4.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품4 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList5"><a href="#" data-imgPath="images/categoryBest_cloth5.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품5 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList6"><a href="#" data-imgPath="images/categoryBest_cloth6.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품6 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList7"><a href="#" data-imgPath="images/categoryBest_cloth7.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품7 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList8"><a href="#" data-imgPath="images/categoryBest_cloth8.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품8 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList9"><a href="#" data-imgPath="images/categoryBest_cloth9.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품9 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                    </ul>
-                </section>
-                <section id="cbTap_beauty">
-                    <h3><a href="#">뷰티</a></h3>
-                    <ul id="cb_beauty_list" class="active">
-                        <li class="cbList1"><a href="#" data-imgPath="images/categoryBest_beauty1.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품1 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList2"><a href="#" data-imgPath="images/categoryBest_beauty2.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품2 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList3"><a href="#" data-imgPath="images/categoryBest_beauty3.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품3 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList4"><a href="#" data-imgPath="images/categoryBest_beauty4.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품4 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList5"><a href="#" data-imgPath="images/categoryBest_beauty5.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품5 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList6"><a href="#" data-imgPath="images/categoryBest_beauty6.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품6 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList7"><a href="#" data-imgPath="images/categoryBest_beauty7.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품7 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList8"><a href="#" data-imgPath="images/categoryBest_beauty8.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품8 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList9"><a href="#" data-imgPath="images/categoryBest_beauty9.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품9 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                    </ul>
-                </section>
-                <section id="cbTap_socks">
-                    <h3><a href="#">양말</a></h3>
-                    <ul id="cb_socks_list" class="active">
-                        <li class="cbList1"><a href="#" data-imgPath="images/categoryBest_socks1.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품1 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList2"><a href="#" data-imgPath="images/categoryBest_socks2.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품2 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList3"><a href="#" data-imgPath="images/categoryBest_socks3.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품3 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList4"><a href="#" data-imgPath="images/categoryBest_socks4.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품4 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList5"><a href="#" data-imgPath="images/categoryBest_socks5.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품5 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList6"><a href="#" data-imgPath="images/categoryBest_socks6.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품6 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList7"><a href="#" data-imgPath="images/categoryBest_socks7.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품7 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList8"><a href="#" data-imgPath="images/categoryBest_socks8.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품8 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList9"><a href="#" data-imgPath="images/categoryBest_socks9.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품9 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                    </ul>
-                </section>
-                <section id="cbTap_oral">
-                    <h3><a href="#">구강 용품</a></h3>
-                    <ul id="cb_oral_list" class="active">
-                        <li class="cbList1"><a href="#" data-imgPath="images/categoryBest_oral1.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품1 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList2"><a href="#" data-imgPath="images/categoryBest_oral2.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품2 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList3"><a href="#" data-imgPath="images/categoryBest_oral3.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품3 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList4"><a href="#" data-imgPath="images/categoryBest_oral4.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품4 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList5"><a href="#" data-imgPath="images/categoryBest_oral5.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품5 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList6"><a href="#" data-imgPath="images/categoryBest_oral6.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품6 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList7"><a href="#" data-imgPath="images/categoryBest_oral7.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품7 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList8"><a href="#" data-imgPath="images/categoryBest_oral8.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품8 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList9"><a href="#" data-imgPath="images/categoryBest_oral9.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품9 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                    </ul>
-                </section>
-                <section id="cbTap_goods">
-                    <h3><a href="#">잡화</a></h3>
-                    <ul id="cb_goods_list" class="active">
-                        <li class="cbList1"><a href="#" data-imgPath="images/categoryBest_goods1.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품1 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList2"><a href="#" data-imgPath="images/categoryBest_goods2.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품2 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList3"><a href="#" data-imgPath="images/categoryBest_goods3.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품3 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList4"><a href="#" data-imgPath="images/categoryBest_goods4.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품4 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList5"><a href="#" data-imgPath="images/categoryBest_goods5.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품5 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList6"><a href="#" data-imgPath="images/categoryBest_goods6.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품6 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList7"><a href="#" data-imgPath="images/categoryBest_goods7.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품7 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList8"><a href="#" data-imgPath="images/categoryBest_goods8.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품8 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList9"><a href="#" data-imgPath="images/categoryBest_goods9.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품9 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                    </ul>
-                </section>
-                <section id="cbTap_season">
-                    <h3><a href="#">계절 용품</a></h3>
-                    <ul id="cb_season_list" class="active">
-                        <li class="cbList1"><a href="#" data-imgPath="images/categoryBest_season1.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품1 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList2"><a href="#" data-imgPath="images/categoryBest_season2.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품2 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList3"><a href="#" data-imgPath="images/categoryBest_season3.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품3 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList4"><a href="#" data-imgPath="images/categoryBest_season4.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품4 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList5"><a href="#" data-imgPath="images/categoryBest_season5.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품5 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList6"><a href="#" data-imgPath="images/categoryBest_season6.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품6 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList7"><a href="#" data-imgPath="images/categoryBest_season7.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품7 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList8"><a href="#" data-imgPath="images/categoryBest_season8.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품8 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="cbList9"><a href="#" data-imgPath="images/categoryBest_season9.jpg">
-                            <div class="p_name">
-                                <p><strong>[브랜드] 상품9 이름</strong></p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                    </ul>
-                </section>
+                <div id="cbTapWrap">
+                    <section id="cbTap_cloth" class="active">
+                        <h3><a href="#"><span class="icon text_hidden">icon</span>의류</a></h3>
+                        <div class="cbListWrap">
+                            <ul id="cb_cloth_list">
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품1 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품2 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품3 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품4 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품5 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품6 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품7 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품8 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품9 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="cbTap_beauty">
+                        <h3><a href="#"><span class="icon text_hidden">icon</span>뷰티</a></h3>
+                        <div class="cbListWrap">
+                            <ul id="cb_beauty_list">
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품1 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품2 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품3 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품4 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품5 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품6 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품7 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품8 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품9 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="cbTap_socks">
+                        <h3><a href="#"><span class="icon text_hidden">icon</span>양말</a></h3>
+                        <div class="cbListWrap">
+                            <ul id="cb_socks_list">
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품1 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품2 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품3 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품4 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품5 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품6 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품7 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품8 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품9 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="cbTap_oral">
+                        <h3><a href="#"><span class="icon text_hidden">icon</span>구강 용품</a></h3>
+                        <div class="cbListWrap">
+                            <ul id="cb_oral_list">
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품1 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품2 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품3 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품4 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품5 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품6 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품7 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품8 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품9 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="cbTap_goods">
+                        <h3><a href="#"><span class="icon text_hidden">icon</span>잡화</a></h3>
+                        <div class="cbListWrap">
+                            <ul id="cb_goods_list">
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품1 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품2 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품3 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품4 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품5 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품6 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품7 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품8 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품9 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="cbTap_season">
+                        <h3><a href="#"><span class="icon text_hidden">icon</span>계절 용품</a></h3>
+                        <div class="cbListWrap">
+                            <ul id="cb_season_list">
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품1 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품2 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품3 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품4 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품5 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품6 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품7 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품8 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                                <li class="cbList"><a href="#">
+                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                    <div class="p_name">
+                                        <p>[브랜드] 상품9 이름</p>
+                                        <p>가격 : <strong>10,000</strong>원</p>
+                                    </div>
+                                    <div class="p_status">
+                                        <p>리뷰 <em>00</em></p>
+                                        <p>평점 <em>0.0</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                    </div>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
             </section>
             <section id="branch">
-                <h2>전국 납품 가게 지역과 수</h2>
-                <p>
-                    사이트에서 보신 상품들은
-                    전국의 중 / 대형 마트에 납품하고 있으니
-                    오프라인 매장에서 상품을 직접 보실 수 있습니다.
-                </p>
-                <div id="map">
-                    <dl>
-                        <dt class="branch_point"><span class="text_hidden">서울 지점</span></dt>
-                        <dd class="branch_count"><span class="text_hidden">서울 지점 수</span></dd>
-                        <dt class="branch_point"><span class="text_hidden">경기 지점</span></dt>
-                        <dd class="branch_count"><span class="text_hidden">경기 지점 수</span></dd>
-                        <dt class="branch_point"><span class="text_hidden">대전 지점</span></dt>
-                        <dd class="branch_count"><span class="text_hidden">대전 지점 수</span></dd>
-                        <dt class="branch_point"><span class="text_hidden">광주 지점</span></dt>
-                        <dd class="branch_count"><span class="text_hidden">광주 지점 수</span></dd>
-                        <dt class="branch_point"><span class="text_hidden">부산 지점</span></dt>
-                        <dd class="branch_count"><span class="text_hidden">부산 지점 수</span></dd>
-                        <dt class="branch_point"><span class="text_hidden">대구 지점</span></dt>
-                        <dd class="branch_count"><span class="text_hidden">대구 지점 수</span></dd>
-                        <dt class="branch_point"><span class="text_hidden">경북 지점</span></dt>
-                        <dd class="branch_count"><span class="text_hidden">경북 지점 수</span></dd>
-                        <dt class="branch_point"><span class="text_hidden">강원 지점</span></dt>
-                        <dd class="branch_count"><span class="text_hidden">강원 지점 수</span></dd>
-                    </dl>
+                <h2 class="hidden">전국 납품 가게 지역과 수</h2>
+                <div id="mapWrap">
+                    <p>
+                        사이트에서 보신 상품들은<br>
+                        전국의 중 / 대형 마트에<br>
+                        납품하고 있으니<br>
+                        오프라인 매장에서<br>
+                        상품을 직접 보실 수 있습니다.
+                    </p>
+                    <div id="map">
+                        <ul>
+                            <li class="point seoul">
+                                <p class="count">100</p>
+                                <p>서울</p>
+                            </li>
+                            <li class="point incheon">
+                                <p class="count">100</p>
+                                <p>인천</p>
+                            </li>
+                            <li class="point gangwon">
+                                <p class="count">100</p>
+                                <p>강원</p>
+                            </li>
+                            <li class="point daejeon">
+                                <p class="count">100</p>
+                                <p>대전</p>
+                            </li>
+                            <li class="point gwangju">
+                                <p class="count">100</p>
+                                <p>광주</p>
+                            </li>
+                            <li class="point daegu">
+                                <p class="count">100</p>
+                                <p>대구</p>
+                            </li>
+                            <li class="point busan">
+                                <p class="count">100</p>
+                                <p>부산</p>
+                            </li>
+                            <li class="point jeju">
+                                <p class="count">100</p>
+                                <p>제주</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
             <section id="client">
