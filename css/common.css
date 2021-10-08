@@ -18,6 +18,7 @@ li {list-style: none;}
 a {text-decoration: none; color: #000; text-transform: uppercase;}
 .hidden {position: absolute; left: -9999px;}
 .text_hidden {text-indent: -9999px;}
+em, address, small, strong {font-size: 1em; font-style: normal;}
 /* 폰트 적용 */
 /* body {font-family: "위메프", sans-serif;} */
 /* body {font-size: 30px;} */
@@ -26,11 +27,14 @@ a {text-decoration: none; color: #000; text-transform: uppercase;}
     font-family: "SB어그로B", sans-serif; color: #c91c1c; font-size: 1.3em;
 }
 /* 헤더 */
-#header {
-    padding: 10px;
-    background-color: #fff;
+#topWrap {
+    background-color: #fff; 
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 10000;
+    overflow: hidden;
+    border-bottom: 1px solid #000;
 }
-#headerWrap {
+#header {
+    padding: 15px;
     position: relative;
     display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;
 }
@@ -92,13 +96,7 @@ a {text-decoration: none; color: #000; text-transform: uppercase;}
     border-radius: 50%; font-size: 0.9em;
 }
 /* 메뉴 */
-#menu {
-    box-shadow: 0 10px 10px #aaaaaa;
-}
-#topWrap {
-    background-color: #fff; 
-    position: fixed; top: 0; left: 0; width: 100%;
-}
+#menu {}
 /* 주메뉴 */
 #gnb {
     width: 60%; margin: 0 auto;
@@ -108,7 +106,7 @@ a {text-decoration: none; color: #000; text-transform: uppercase;}
 #gnb > li {float: left;}
 #gnb > li > a {
     /* background-color: coral; */
-    display: block; width: 100%; padding: 25px 0;
+    display: block; width: 100%; padding: 10px 0 20px;
     text-align: center; font-size: 0.95em; font-weight: bold;
     position: relative;
     /* font-family: "위메프B", sans-serif; */
@@ -119,10 +117,9 @@ a {text-decoration: none; color: #000; text-transform: uppercase;}
 }
 /* 보조 메뉴 - 1 */
 #gnb .one_depth_snb {
-    position: absolute; top: 100px; left: 0; width: 100%; display: none;
+    position: absolute; top: 100px; left: 0; width: 100%;
     /* background-color: cornflowerblue; */
 }
-#gnb > li.on .one_depth_snb {display: block; width: 100%;}
 #gnb .one_depth_snb > li {float: left; width: 14%;}
 #gnb .one_depth_snb > li > a {
     /* font-family: "위메프B", sans-serif; */
@@ -134,4 +131,196 @@ a {text-decoration: none; color: #000; text-transform: uppercase;}
 #gnb .two_depth_snb li {}
 #gnb .two_depth_snb li a {
     padding: 10px 0; font-size: 0.75em; color: #595959;
+}
+/* 슬라이더 */
+#main_slider {
+    margin-top: 130px; height: 600px; width: 100%; position: relative;
+    background-color: #afafaf;
+}
+/* 슬라이더 그림들 */
+#main_sliderWrap {}
+#main_sliderWrap li {
+    width: 100%; height: 100%; position: absolute; top: 0; left: 0;
+    background: no-repeat center / cover;
+}
+#main_sliderWrap li a {
+    display: block; width: 80%; height: 100%; margin: 0 auto;
+    padding: 50px 0 0 50px; box-sizing: border-box;
+    background: #12c2e9;
+}
+#main_sliderWrap li a p {
+    font-size: 4em;
+    color: #fff; text-shadow: 3px 3px 3px #595959;
+}
+/* 슬라이더 목록 */
+#main_sliderList {
+    width: 10vw;
+    position: absolute; top: 50%; transform: translateY(-50%); right: 10vw;
+    background: #c7c7c7; box-shadow: 0 0 10px #595959;
+}
+#main_sliderList ul {
+    display: grid; row-gap: 2px;
+}
+#main_sliderList ul li {}
+#main_sliderList ul li a {
+    display: block; width: 100%; height: 60px;
+    background: #fff;
+}
+#main_sliderList ul li a:hover {border: 1px solid #c91c1c;}
+/* 메인 */
+/* 각 섹션 공통 */
+#main > section {padding: 60px 0;}
+#main > section h2 {text-align: center; font-size: 3em; margin-bottom: 60px;}
+/* 추천해요 */
+#recommend {background-color: #efefef;}
+#recommend dl {
+     width: 75%; margin: 0 auto; padding-bottom: 20px;
+    display: grid; grid-template-columns: auto auto auto; gap: 10px;
+}
+#recommend dl dt {}
+#recommend dl dd {
+    background: #fff;
+}
+#recommend dl dd a {
+    display: block; height: 300px; width: 100%;
+    box-sizing: border-box; transition-duration: 0.3s;
+    border: 1px solid #afafaf;
+}
+#recommend dl dd a:hover {border: 1px solid #c91c1c; box-shadow: 0 0 10px #4d4d4d;}
+#recommend dl dd a p {font-size: 2.5em; text-align: center; line-height: 300px;}
+/* 새로 나왔어요 */
+#new {}
+#new h2 {}
+#newListWrap {width: 95%; margin: 0 auto; overflow: hidden;}
+#newList {
+    width: 220%; display: grid; column-gap: 30px;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+}
+#newList li {}
+#newList li a {
+    display: block;
+}
+#newList li a img {width: 100%;}
+#newList .p_name {padding: 10px;}
+#newList .p_name p {}
+#newList .p_name p strong {}
+#newList .p_status {
+    font-size: 0.9em; padding: 0 10px;
+}
+#newList .p_status p {padding-bottom: 10px;}
+#newList .p_status p:nth-child(1) {float: left; margin-right: 10px;}
+#newList .p_status p:nth-child(2) {float: left;}
+#newList .p_status p:nth-child(3) {float: right;}
+#newList .p_status p em {color: #c91c1c; font-weight: bold;}
+/* 위치 */
+#new_move {clear: both; padding: 80px 0 30px;}
+#new_position {
+    margin: 0 auto; width: 500px; height: 2px;
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59, #c471ed, #12c2e9);
+
+}
+#new_move a{
+    display: block; width: 60px; height: 30px; position: relative; top: -15px;
+    background: url(../svg/crystal-e_new.svg) no-repeat center / cover;
+    box-shadow: 0 0 5px #595959; border-radius: 8px;
+}
+/* 카테고리 베스트 */
+#categoryBest {background: #efefef;}
+/* 각 탭 위치 잡기 */
+#cbTapWrap {
+    /* background: chartreuse; */
+    width: 70%; margin: 0 auto; position: relative;
+}
+#cbTapWrap > section h3 {}
+#cbTapWrap section .cbListWrap {padding-top: 9vw; display: none;}
+#cbTapWrap section.active .cbListWrap {display: block;}
+/* 각 탭 */
+#cbTapWrap h3 {width: 16.6%; position: absolute; top: 0; text-align: center;}
+#cbTap_cloth h3 {left: 0;}
+#cbTap_beauty h3 {left: 16.6%;}
+#cbTap_socks h3 {left: 33.2%;}
+#cbTap_oral h3 {left: 49.8%;}
+#cbTap_goods h3 {left: 66.4%;}
+#cbTap_season h3 {left: 83%;}
+#cbTapWrap h3 span {
+    display: block; width: 6vw; height: 6vw; margin: 0 auto 10px;
+    background: no-repeat center / cover;
+}
+#cbTap_cloth h3 span {background-image: url(../svg/categoryBest/cloth_off.svg);}
+#cbTap_beauty h3 span {background-image: url(../svg/categoryBest/beauty_off.svg);}
+#cbTap_socks h3 span {background-image: url(../svg/categoryBest/socks_off.svg);}
+#cbTap_oral h3 span {background-image: url(../svg/categoryBest/oral_off.svg);}
+#cbTap_goods h3 span {background-image: url(../svg/categoryBest/goods_off.svg);}
+#cbTap_season h3 span {background-image: url(../svg/categoryBest/season_off.svg);}
+/* hover */
+#cbTap_cloth h3 a:hover span {background-image: url(../svg/categoryBest/cloth_on.svg);}
+#cbTap_beauty h3 a:hover span {background-image: url(../svg/categoryBest/beauty_on.svg);}
+#cbTap_socks h3 a:hover span {background-image: url(../svg/categoryBest/socks_on.svg);}
+#cbTap_oral h3 a:hover span {background-image: url(../svg/categoryBest/oral_on.svg);}
+#cbTap_goods h3 a:hover span {background-image: url(../svg/categoryBest/goods_on.svg);}
+#cbTap_season h3 a:hover span {background-image: url(../svg/categoryBest/season_on.svg);}
+/* active class */
+#cbTap_cloth.active h3 span {background-image: url(../svg/categoryBest/cloth_on.svg);}
+#cbTap_beauty.active h3 span {background-image: url(../svg/categoryBest/beauty_on.svg);}
+#cbTap_socks.active h3 span {background-image: url(../svg/categoryBest/socks_on.svg);}
+#cbTap_oral.active h3 span {background-image: url(../svg/categoryBest/oral_on.svg);}
+#cbTap_goods.active h3 span {background-image: url(../svg/categoryBest/goods_on.svg);}
+#cbTap_season.active h3 span {background-image: url(../svg/categoryBest/season_on.svg);}
+#cbTapWrap h3 a {font-size: 0.9em;}
+#cbTapWrap ul {
+    width: 90%; margin: 30px auto 0;
+    display: grid; grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto; gap: 30px;
+}
+#cbTapWrap .cbList {}
+#cbTapWrap .cbList a img {width: 100%;}
+#cbTapWrap .cbList .p_name {padding: 10px;}
+#cbTapWrap .cbList .p_name p {}
+#cbTapWrap .cbList .p_name p strong {}
+#cbTapWrap .cbList .p_status {
+    font-size: 0.9em; padding: 0 10px;
+}
+#cbTapWrap .cbList .p_status p {padding-bottom: 10px;}
+#cbTapWrap .cbList .p_status p:nth-child(1) {float: left; margin-right: 10px;}
+#cbTapWrap .cbList .p_status p:nth-child(2) {float: left;}
+#cbTapWrap .cbList .p_status p:nth-child(3) {float: right;}
+#cbTapWrap .cbList .p_status p em {color: #c91c1c; font-weight: bold;}
+/* 지도 */
+#branch {
+    background: #045e8844;
+    display: table-cell; width: 100vw; vertical-align: middle;
+}
+#branch::after {content: ""; display: block; clear:both;}
+#mapWrap {width: 70%; margin: 0 auto;}
+#mapWrap > p {
+    width: 50%; float: left; margin-left: 30px;
+    font-size: 2.5vw; font-weight: bold; color: #fff; text-shadow: -3px 3px 10px #595959;
+    line-height: 1.5em;
+    border: 1px solid #000;
+}
+#map {
+    float: right; width: 350px; height: 525px; position: relative;
+    background: url(../svg/map.svg) no-repeat center / cover;
+    vertical-align: middle;
+}
+#map ul {position: relative;}
+#map .point {
+    position: absolute;
+    font-weight: bold; color: #c91c1c;
+    /* border: 1px solid #000; */
+}
+#map .seoul {top: 45px; left: 100px;}
+#map .incheon {top: 75px; left: 75px;}
+#map .daejeon {top: 170px; left: 135px;}
+#map .gwangju {top: 295px; left: 80px;}
+#map .daegu {top: 235px; left: 230px;}
+#map .jeju {top: 425px; left: 60px;}
+#map .busan {top: 290px; left: 270px;}
+#map .gangwon {top: 40px; left: 240px;}
+#map .count {
+    height: 55px;
+    background: url(../svg/crystal-e_mapPoint.svg) no-repeat bottom / 20px;
+}
+#map .point p:last-child {
+    color: #000; font-size: 0.8em; font-weight: bold;
 }
