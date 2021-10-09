@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/common.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/common.js" async></script>
         <title>크리스탈 e</title>
     </head>
     <body>
@@ -152,13 +154,13 @@
             <nav id="main_sliderList">
                 <h3 class="hidden">목록</h3>
                 <ul>
-                    <li><a href="#">제품1</a></li>
-                    <li><a href="#">제품2</a></li>
-                    <li><a href="#">제품3</a></li>
-                    <li><a href="#">제품4</a></li>
-                    <li><a href="#">제품5</a></li>
-                    <li><a href="#">제품6</a></li>
-                    <li><a href="#">제품7</a></li>
+                    <li><a href="#" data-imgPath="images/slider/slider1">제품1</a></li>
+                    <li><a href="#" data-imgPath="images/slider/slider2">제품2</a></li>
+                    <li><a href="#" data-imgPath="images/slider/slider3">제품3</a></li>
+                    <li><a href="#" data-imgPath="images/slider/slider4">제품4</a></li>
+                    <li><a href="#" data-imgPath="images/slider/slider5">제품5</a></li>
+                    <li><a href="#" data-imgPath="images/slider/slider6">제품6</a></li>
+                    <li><a href="#" data-imgPath="images/slider/slider7">제품7</a></li>
                 </ul>
             </nav>
         </section>
@@ -167,27 +169,27 @@
                 <h2>추천해요</h2>
                 <dl>
                     <dt class="hidden">의류 카테고리 추천 제품</dt>
-                    <dd class="cloth_r rList"><a href="#" data-imgPath="images/rc_cloth_product.jpg">
+                    <dd class="cloth_r rList"><a href="#" data-imgPath="images/recommend/cloth.jpg">
                         <p>추천 상품 이름</p>
                     </a></dd>
                     <dt class="hidden">뷰티 카테고리 추천 제품</dt>
-                    <dd class="beauth_r rList"><a href="#" data-imgPath="images/rc_beauth_product.jpg">
+                    <dd class="beauth_r rList"><a href="#" data-imgPath="images/recommend/beauty.jpg">
                         <p>추천 상품 이름</p>
                     </a></dd>
                     <dt class="hidden">양말 카테고리 추천 제품</dt>
-                    <dd class="socks_r rList"><a href="#" data-imgPath="images/rc_socks_product.jpg">
+                    <dd class="socks_r rList"><a href="#" data-imgPath="images/recommend/socks.jpg">
                         <p>추천 상품 이름</p>
                     </a></dd>
                     <dt class="hidden">구강 용품 카테고리 추천 제품</dt>
-                    <dd class="oral_r rList"><a href="#" data-imgPath="images/rc_oral_product.jpg">
+                    <dd class="oral_r rList"><a href="#" data-imgPath="images/recommend/oral.jpg">
                         <p>추천 상품 이름</p>
                     </a></dd>
                     <dt class="hidden">잡화 카테고리 추천 제품</dt>
-                    <dd class="goods_r rList"><a href="#" data-imgPath="images/rc_goods_product.jpg">
+                    <dd class="goods_r rList"><a href="#" data-imgPath="images/recommend/goods.jpg">
                         <p>추천 상품 이름</p>
                     </a></dd>
                     <dt class="hidden">계절 용품 카테고리 추천 제품</dt>
-                    <dd class="season_r rList"><a href="#" data-imgPath="images/rc_season_product.jpg">
+                    <dd class="season_r rList"><a href="#" data-imgPath="images/recommend/season.jpg">
                         <p>추천 상품 이름</p>
                     </a></dd>
                 </dl>
@@ -196,11 +198,83 @@
                 <h2>새로 나왔어요</h2>
                 <div id="newListWrap">
                     <ul id="newList">
-                        <li class="nList1"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품1">
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new1.jpg" alt="상품1">
+                            </div>
                             <div class="p_name">
-                                <p>[브랜드] 상품1 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
+                                <p>[bisera] 비세라 장내 플로라 밸런스 유산균 서플리먼트</p>
+                                <p>가격 : <strong>45,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>26</em></p>
+                                <p>평점 <em>3.7</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>168</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new2.jpg" alt="상품2">
+                            </div>
+                            <div class="p_name">
+                                <p>[삼성전자] 갤럭시북 NT750XDZ-A51A 1.55kg 대학생추천노트북 과제용 사무용 인강</p>
+                                <p>가격 : <strong>977,310</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>179</em></p>
+                                <p>평점 <em>4.1</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>338</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new3.jpg" alt="상품3">
+                            </div>
+                            <div class="p_name">
+                                <p>[terapic] 프리미엄 헤어토닉 160ml + 30ml 헤어토닉</p>
+                                <p>가격 : <strong>17,900</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>65</em></p>
+                                <p>평점 <em>3.6</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>179</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new4.jpg" alt="상품4">
+                            </div>
+                            <div class="p_name">
+                                <p>[벨롭] F/W 티바트 신상품/스니커즈/운동화 모음전</p>
+                                <p>가격 : <strong>39,000</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>49</em></p>
+                                <p>평점 <em>4.6</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>80</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new5.jpg" alt="상품5">
+                            </div>
+                            <div class="p_name">
+                                <p>[벨롭] 밸롭 남녀공용 니트 런닝화 티바트2.0 1&1 운동화 스니커즈</p>
+                                <p>가격 : <strong>100,700</strong>원</p>
+                            </div>
+                            <div class="p_status">
+                                <p>리뷰 <em>17</em></p>
+                                <p>평점 <em>3.2</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>12</em>개 구매</p>
+                            </div>
+                        </a></li>
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new6.jpg" alt="상품6">
+                            </div>
+                            <div class="p_name">
+                                <p>[한누리팜마트] RNC 꽃솎는가위/적과가위</p>
+                                <p>가격 : <strong>12,000</strong>원</p>
                             </div>
                             <div class="p_status">
                                 <p>리뷰 <em>00</em></p>
@@ -208,112 +282,60 @@
                                 <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                             </div>
                         </a></li>
-                        <li class="nList2"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품2">
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new7.jpg" alt="상품7">
+                            </div>
                             <div class="p_name">
-                                <p>[브랜드] 상품2 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
+                                <p>[양말폭탄] 아동/성인 가을 인기 양말 BEST/중목/골지/니삭스/타이즈/보온수면양말</p>
+                                <p>가격 : <strong>5,500</strong>원</p>
                             </div>
                             <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                <p>리뷰 <em>174</em></p>
+                                <p>평점 <em>4.3</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>201</em>개 구매</p>
                             </div>
                         </a></li>
-                        <li class="nList3"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품3">
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new8.jpg" alt="상품8">
+                            </div>
                             <div class="p_name">
-                                <p>[브랜드] 상품3 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
+                                <p>[LAP ACC] 21F/W 가을신상 가방/지갑/모자</p>
+                                <p>가격 : <strong>9,700</strong>원</p>
                             </div>
                             <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                <p>리뷰 <em>398</em></p>
+                                <p>평점 <em>3.9</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>409</em>개 구매</p>
                             </div>
                         </a></li>
-                        <li class="nList4"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품4">
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new9.jpg" alt="상품9">
+                            </div>
                             <div class="p_name">
-                                <p>[브랜드] 상품4 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
+                                <p>[ab.plus] 최대 97% OFF 한정물량 모음전</p>
+                                <p>가격 : <strong>9,900</strong>원</p>
                             </div>
                             <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                <p>리뷰 <em>832</em></p>
+                                <p>평점 <em>3.9</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>1005</em>개 구매</p>
                             </div>
                         </a></li>
-                        <li class="nList5"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품5">
+                        <li class="pList"><a href="#">
+                            <div class="imgWrap">
+                                <img src="images/new/new10.jpg" alt="상품10">
+                            </div>
                             <div class="p_name">
-                                <p>[브랜드] 상품5 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
+                                <p>[라네즈] 네오쿠션 X 메종키츠네 에코백/파우치/스마트톡 굿즈 특별구성</p>
+                                <p>가격 : <strong>19,600</strong>원</p>
                             </div>
                             <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="nList6"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품6">
-                            <div class="p_name">
-                                <p>[브랜드] 상품6 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="nList7"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품7">
-                            <div class="p_name">
-                                <p>[브랜드] 상품7 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="nList8"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품8">
-                            <div class="p_name">
-                                <p>[브랜드] 상품8 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="nList9"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품9">
-                            <div class="p_name">
-                                <p>[브랜드] 상품9 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
-                            </div>
-                        </a></li>
-                        <li class="nList10"><a href="#">
-                            <img src="images/new/product.jpg" alt="상품10">
-                            <div class="p_name">
-                                <p>[브랜드] 상품10 이름</p>
-                                <p>가격 : <strong>10,000</strong>원</p>
-                            </div>
-                            <div class="p_status">
-                                <p>리뷰 <em>00</em></p>
-                                <p>평점 <em>0.0</em>/5</p>
-                                <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                <p>리뷰 <em>646</em></p>
+                                <p>평점 <em>2.8</em>/5</p>
+                                <p><span class="hidden">판매 현황</span><em>805</em>개 구매</p>
                             </div>
                         </a></li>
                     </ul>
@@ -331,112 +353,130 @@
                         <h3><a href="#"><span class="icon text_hidden">icon</span>의류</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_cloth_list">
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth1.jpg" alt="카테고리베스트 상품1">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품1 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[폴햄] 맨투맨/다운점퍼외 ~85%</p>
+                                        <p>가격 : <strong>9,900~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>358</em></p>
+                                        <p>평점 <em>3.5</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>405</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth2.jpg" alt="카테고리베스트 상품2">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품2 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[꼼파뇨] 후드/맨투맨/롱슬리브</p>
+                                        <p>가격 : <strong>13,430~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>66</em></p>
+                                        <p>평점 <em>4.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>106</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth3.jpg" alt="카테고리베스트 상품3">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품3 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[올젠] 남성 브랜드 아울렛 가을 100종 모음전</p>
+                                        <p>가격 : <strong>9,000~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>58</em></p>
+                                        <p>평점 <em>2.8</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>79</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth4.jpg" alt="카테고리베스트 상품4">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품4 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[타미힐피거] 남성 라운드/브이넥 니트류 모음전</p>
+                                        <p>가격 : <strong>10,000~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>356</em></p>
+                                        <p>평점 <em>3.5</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>367</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth5.jpg" alt="카테고리베스트 상품5">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품5 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[에디션] F/W신상출시 전품목 특가! ~87%</p>
+                                        <p>가격 : <strong>14,310~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>120</em></p>
+                                        <p>평점 <em>2.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>128</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth6.jpg" alt="카테고리베스트 상품6">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품6 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[디키즈] 맨투맨,후드티, 플리스 역대급 할인+ 컬럼비아 유니버시티 런칭특가</p>
+                                        <p>가격 : <strong>8,910~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>189</em></p>
+                                        <p>평점 <em>3.8</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>208</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth7.jpg" alt="카테고리베스트 상품7">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품7 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[지오지아] FW 인기 티셔츠/스웨터/팬츠/아우터 ~88%</p>
+                                        <p>가격 : <strong>9,000~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>752</em></p>
+                                        <p>평점 <em>4.2</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>883</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth8.jpg" alt="카테고리베스트 상품8">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품8 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[언리미트] 플리스자켓/후드/맨투맨 모음</p>
+                                        <p>가격 : <strong>7,000~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>843</em></p>
+                                        <p>평점 <em>4.3</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>982</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/cloth9.jpg" alt="카테고리베스트 상품9">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품9 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[컨셉원] F/W new&best 70종</p>
+                                        <p>가격 : <strong>13,500~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>316</em></p>
+                                        <p>평점 <em>3.9</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>489</em>개 구매</p>
                                     </div>
                                 </a></li>
                             </ul>
@@ -446,112 +486,130 @@
                         <h3><a href="#"><span class="icon text_hidden">icon</span>뷰티</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_beauty_list">
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty1.jpg" alt="카테고리베스트 상품1">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품1 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[아모레퍼시픽] 아이오페/에스트라/한율/라네즈/마몽드~50%+증정!</p>
+                                        <p>가격 : <strong>26,600~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>395</em></p>
+                                        <p>평점 <em>3.9</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>444</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty2.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품2 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[아이오페] 슈퍼바이탈/스템3/맨 프리미엄 구성!</p>
+                                        <p>가격 : <strong>26,600~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>221</em></p>
+                                        <p>평점 <em>4.2</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>258</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty3.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품3 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[이니스프리] 이니스프리 1+ 1 클렌징오일/워터/레티놀 기획세트 30%/블랙티/그린티/노세범X노티드</p>
+                                        <p>가격 : <strong>7,560~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>198</em></p>
+                                        <p>평점 <em>3.4</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>243</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty4.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품4 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[so natural] 세팅픽서/시그니처페이스오일/비건어성식초패드</p>
+                                        <p>가격 : <strong>9,000~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>222</em></p>
+                                        <p>평점 <em>2.3</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>237</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty5.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품5 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[동국제약] 국민마데카SALE~92% 동국제약 멀티밤/마데카크림/기미앰플/탄력세럼/가을뷰티/센텔리안24 BEST</p>
+                                        <p>가격 : <strong>11,610~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>136</em></p>
+                                        <p>평점 <em>3.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>166</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty6.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품6 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[한율] 환절기엔 한율 유자C 기프티콘+굿즈 특별구성!</p>
+                                        <p>가격 : <strong>17,500~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>155</em></p>
+                                        <p>평점 <em>3.5</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>172</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty7.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품7 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[설화수] 설화수 BEST 상품 모음전! #가을맞이#최대혜택#상품권</p>
+                                        <p>가격 : <strong>58,500~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>288</em></p>
+                                        <p>평점 <em>2.9</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>317</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty8.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품8 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[토니모리] 가을 피부 보습 1+1 기획전</p>
+                                        <p>가격 : <strong>9,000~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>102</em></p>
+                                        <p>평점 <em>3.8</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>185</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/beauty9.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품9 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[투쿨포스쿨] 전품목~66% 한정 빅세일! (신상글로우쿠션/천만쉐딩/헤어쉐딩/세팅팩트/틴트/립스틱)</p>
+                                        <p>가격 : <strong>7,110~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>122</em></p>
+                                        <p>평점 <em>3.2</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>142</em>개 구매</p>
                                     </div>
                                 </a></li>
                             </ul>
@@ -561,112 +619,130 @@
                         <h3><a href="#"><span class="icon text_hidden">icon</span>양말</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_socks_list">
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks1.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품1 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[양말폭탄] 양말폭탄 아동/성인 가을 인기 양말 BEST/중목/골지/니삭스/타이즈/보온수면양말</p>
+                                        <p>가격 : <strong>4,950~</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>653</em></p>
+                                        <p>평점 <em>3.5</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>753</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks2.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품2 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[더빨간양말] 가을신상 여성 남성 패션양말/두꺼운양말/수면양말</p>
+                                        <p>가격 : <strong>8,010</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>542</em></p>
+                                        <p>평점 <em>4.2</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>654</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks3.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품3 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[투투양말] 가을 신상 양말/패션/중목/장목/무지/학생/스포츠</p>
+                                        <p>가격 : <strong>8,910</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>12</em></p>
+                                        <p>평점 <em>3.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>33</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks4.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품4 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[허니삭스] 가을 패션 양말 신상 추가/페이크삭스/무지/캐릭터/아동양말 시즌 세일</p>
+                                        <p>가격 : <strong>8,010</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>212</em></p>
+                                        <p>평점 <em>2.9</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>245</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks5.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품5 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[프롬산타] 국산 면 양말/덧신/페이크삭스/세트/스니커즈/중목/장목/학생</p>
+                                        <p>가격 : <strong>6,650</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>132</em></p>
+                                        <p>평점 <em>3.2</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>157</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks6.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품6 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[골지양말] 신상 패션 양말 남성여성 중목 골지 스포츠 덧신 페이크삭스</p>
+                                        <p>가격 : <strong>1,1120</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>422</em></p>
+                                        <p>평점 <em>4.2</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>452</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks7.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품7 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[데일리] 가을 남여 양말 스니커즈 페이크삭스 중목 단목</p>
+                                        <p>가격 : <strong>7,110</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>55</em></p>
+                                        <p>평점 <em>3.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>85</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks8.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품8 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[돌돌이] 여성 골지 돌돌이 패션 롱삭스 중목 덧신 겨울 양말</p>
+                                        <p>가격 : <strong>1,590</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>39</em></p>
+                                        <p>평점 <em>2.9</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>65</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/socks9.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품9 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[주드] 캐릭터 양말</p>
+                                        <p>가격 : <strong>5,490</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>9</em></p>
+                                        <p>평점 <em>2.8</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>11</em>개 구매</p>
                                     </div>
                                 </a></li>
                             </ul>
@@ -676,112 +752,130 @@
                         <h3><a href="#"><span class="icon text_hidden">icon</span>구강 용품</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_oral_list">
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral1.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품1 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[오랄비] 초미세모/토탈/잇몸케어</p>
+                                        <p>가격 : <strong>13,900</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>123</em></p>
+                                        <p>평점 <em>2.3</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>139</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral2.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품2 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[덴터치소프트] 칫솔 부드러운 칫솔모 컴팩트 헤드 12개입</p>
+                                        <p>가격 : <strong>9,900</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>88</em></p>
+                                        <p>평점 <em>2.8</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>99</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral3.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품3 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[오랄비] 기능 별 대표 칫솔 6개 모음전</p>
+                                        <p>가격 : <strong>10,500</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>95</em></p>
+                                        <p>평점 <em>3.5</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>105</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral4.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품4 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[오스템 뷰센] 더블와이드 향균 칫솔 12입</p>
+                                        <p>가격 : <strong>37,440</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>226</em></p>
+                                        <p>평점 <em>4.2</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>237</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral5.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품5 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[닥터홍] 레인보우 실리콘칫솔 체인지형 10개 묶음</p>
+                                        <p>가격 : <strong>8,910</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>46</em></p>
+                                        <p>평점 <em>3.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>89</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral6.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품6 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[쿤달] 딥 클린 항균 이중미세모 칫솔 16개입 세트</p>
+                                        <p>가격 : <strong>19,500</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>153</em></p>
+                                        <p>평점 <em>3.5</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>195</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral7.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품7 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[오랄비] (잇몸/저자극 전문) 초소형헤드 초미세모 칫솔 모음전</p>
+                                        <p>가격 : <strong>20,900</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>156</em></p>
+                                        <p>평점 <em>3.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>209</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral8.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품8 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[colgate] 엑스트라 클린 칫솔 6개 세트 부드러운 모</p>
+                                        <p>가격 : <strong>5,610</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>235</em></p>
+                                        <p>평점 <em>3.5</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>256</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/oral9.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품9 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[켄트] 클래식 초극세모 칫솔</p>
+                                        <p>가격 : <strong>15,100</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>126</em></p>
+                                        <p>평점 <em>2.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>151</em>개 구매</p>
                                     </div>
                                 </a></li>
                             </ul>
@@ -791,112 +885,130 @@
                         <h3><a href="#"><span class="icon text_hidden">icon</span>잡화</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_goods_list">
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods1.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품1 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[sband] 헤어밴드</p>
+                                        <p>가격 : <strong>3340</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>235</em></p>
+                                        <p>평점 <em>3.5</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>275</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods2.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품2 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[니즈백] 무지 집게핀 10종 세트</p>
+                                        <p>가격 : <strong>10900</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>159</em></p>
+                                        <p>평점 <em>3.9</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>169</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods3.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품3 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[이쁨달다] 블랙무팁링 매듭없는 짱짱 머리끈+파우치 50개 100개 200개 대용</p>
+                                        <p>가격 : <strong>5800</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>126</em></p>
+                                        <p>평점 <em>2.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>146</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods4.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품4 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[마리끌레르] 남성용 44선염 손수건 2종 x 2p 세트</p>
+                                        <p>가격 : <strong>12380</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>26</em></p>
+                                        <p>평점 <em>3.2</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>38</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods5.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품5 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[렌느] 국산 가제 손수건 160가지 디자인 아사 면 쁘띠 캐릭터 플라워 여성손수건 유아 유치원 어린이집 행사 단체 손수건 스카프 7+1</p>
+                                        <p>가격 : <strong>2300</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>211</em></p>
+                                        <p>평점 <em>2.1</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>214</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods6.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품6 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[해피툴] 나비 손수건 / 스카프 2입</p>
+                                        <p>가격 : <strong>7940</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>352</em></p>
+                                        <p>평점 <em>4.3</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>363</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods7.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품7 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[비에썸] 초경량 3단 자동 우양산</p>
+                                        <p>가격 : <strong>15900</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>156</em></p>
+                                        <p>평점 <em>3.6</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>176</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods8.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품8 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[지브라] 75 골프 장우산</p>
+                                        <p>가격 : <strong>11900</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>95</em></p>
+                                        <p>평점 <em>2.9</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>108</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/goods9.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품9 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[카운테스마라 폰지바이어스] 2단 우산</p>
+                                        <p>가격 : <strong>7,000</strong>원</p>
                                     </div>
                                     <div class="p_status">
-                                        <p>리뷰 <em>00</em></p>
-                                        <p>평점 <em>0.0</em>/5</p>
-                                        <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
+                                        <p>리뷰 <em>59</em></p>
+                                        <p>평점 <em>3.9</em>/5</p>
+                                        <p><span class="hidden">판매 현황</span><em>89</em>개 구매</p>
                                     </div>
                                 </a></li>
                             </ul>
@@ -906,10 +1018,12 @@
                         <h3><a href="#"><span class="icon text_hidden">icon</span>계절 용품</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_season_list">
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품1">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season1.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품1 이름</p>
+                                        <p>[수스다] 울캐시미어 파시미나 머플러 목도리 스카프 남녀공용 커플용</p>
                                         <p>가격 : <strong>10,000</strong>원</p>
                                     </div>
                                     <div class="p_status">
@@ -918,10 +1032,12 @@
                                         <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품2">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season2.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품2 이름</p>
+                                        <p>[디클라라] 바닐라빈 머플러</p>
                                         <p>가격 : <strong>10,000</strong>원</p>
                                     </div>
                                     <div class="p_status">
@@ -930,10 +1046,12 @@
                                         <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품3">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season3.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품3 이름</p>
+                                        <p>[디클라라] 빅 소프트 머플러</p>
                                         <p>가격 : <strong>10,000</strong>원</p>
                                     </div>
                                     <div class="p_status">
@@ -942,11 +1060,13 @@
                                         <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품4">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season4.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품4 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[퍼스트스타] 여성 라운드 경량 패딩 조끼 A9007</p>
+                                        <p>가격 : <strong>16900</strong>원</p>
                                     </div>
                                     <div class="p_status">
                                         <p>리뷰 <em>00</em></p>
@@ -954,11 +1074,13 @@
                                         <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품5">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season5.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품5 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[테이트] 꽃샘 추위 필수템 !! 더욱 가볍고 !! 더욱 포근한 !! 프리미엄 라이트 경량 다운 조끼</p>
+                                        <p>가격 : <strong>14900</strong>원</p>
                                     </div>
                                     <div class="p_status">
                                         <p>리뷰 <em>00</em></p>
@@ -966,11 +1088,13 @@
                                         <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품6">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season6.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품6 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[퍼스트스타] 여성 후드 경량 패딩 등산 조끼 R1051-1</p>
+                                        <p>가격 : <strong>17900</strong>원</p>
                                     </div>
                                     <div class="p_status">
                                         <p>리뷰 <em>00</em></p>
@@ -978,11 +1102,13 @@
                                         <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품7">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season7.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품7 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[칼라거펠트] FW 오뜨 캐시미어100 홀가먼트 클로슈햇</p>
+                                        <p>가격 : <strong>69900</strong>원</p>
                                     </div>
                                     <div class="p_status">
                                         <p>리뷰 <em>00</em></p>
@@ -990,11 +1116,13 @@
                                         <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품8">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season8.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품8 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[제이이쁜너] 여자겨울모자 방울모자 귀달이모자 스키모자 여성 데일리 모자</p>
+                                        <p>가격 : <strong>21900</strong>원</p>
                                     </div>
                                     <div class="p_status">
                                         <p>리뷰 <em>00</em></p>
@@ -1002,11 +1130,13 @@
                                         <p><span class="hidden">판매 현황</span><em>000</em>개 구매</p>
                                     </div>
                                 </a></li>
-                                <li class="cbList"><a href="#">
-                                    <img src="images/categoryBest/categoryBest.jpg" alt="카테고리베스트 상품9">
+                                <li class="pList"><a href="#">
+                                    <div class="imgWrap">
+                                        <img src="images/categoryBest/season9.jpg" alt="카테고리베스트 상품">
+                                    </div>
                                     <div class="p_name">
-                                        <p>[브랜드] 상품9 이름</p>
-                                        <p>가격 : <strong>10,000</strong>원</p>
+                                        <p>[이스트무브] 남녀공용 롤업 방한 니트 털비니 모자</p>
+                                        <p>가격 : <strong>13900</strong>원</p>
                                     </div>
                                     <div class="p_status">
                                         <p>리뷰 <em>00</em></p>
@@ -1090,42 +1220,46 @@
             </section>
         </main>
         <aside id="aside_product">
-            <h2>장바구니 바로가기 / 최근 본 상품</h2>
+            <h2 class="hidden">장바구니 바로가기 / 최근 본 상품</h2>
             <div id="as_basket">
-                <p class="text_hidden">장바구니</p>
+                <a href="#" class="text_hidden">장바구니</a>
                 <p class="basket_count">0</p>
             </div>
             <div id="as_recent_product">
+                <p>최근 본 상품</p>
                 <ul>
-                    <li class="no_item">
-                        최근 본 상품이 없습니다.
-                    </li>
+                    <li class="no_item">최근 본 상품이 없습니다.</li>
                 </ul>
             </div>
         </aside>
         <div id="top_bottom">
-            <a href="#header" class="text_hidden top">top 바로가기</a>
+            <a href="#" class="text_hidden top">top 바로가기</a>
             <a href="#client" class="text_hidden bottom">bottom 바로가기</a>
         </div>
-        <footer id="footer">
-            <div id="info">
-                <p>
-                    대표이사 : 김경욱
-                    주소 : 대구시 북구 서변동 1779-1번지 크리스탈e 빌딩
-                    사업자등록번호 : 504-01-83529
-                    문의 전화 : 070-8225-9958, 010-3060-1306
-                    fax : 053-951-9950
-                </p>
-                <small>copyright (c) 2012 crystal-<span>e</span>company, all rights reserved.</small>
-            </div>
-            <div id="customer_call">
-                <p>고객 센터</p>
-                <p><strong>070-8225-9958</strong></p>
-            </div>
-            <div id="link">
-                <a href="https://smartstore.naver.com/crystale?NaPm=ct%3Dkuhs1gf0%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3Ddffd876bc2e182670e142c3a99cbb89a421b4140" class="text_hidden">크리스탈 e 샵</a>
-            </div>
-        </footer>
+        <div id="footerWrap">
+            <footer id="footer">
+                <div id="info">
+                    <p>
+                        대표이사 : 김경호<br>
+                        주소 : 대구시 북구 서변동 1779-1번지 크리스탈e 빌딩<br>
+                        사업자등록번호 : 504-01-83529<br>
+                        문의 전화 : 070-8225-9958, 010-3060-1306<br>
+                        fax : 053-951-9950
+                    </p>
+                    <small>copyright (c) 2012 crystal-<span>e</span> company, all rights reserved.</small>
+                </div>
+                <div id="customer_call">
+                    <p>
+                        고객 센터<br>
+                        <span>문의주시면 정성껏 답변해드리겠습니다.</span>
+                    </p>
+                    <p><strong>070-8225-9958</strong></p>
+                </div>
+                <div id="link">
+                    <a href="https://smartstore.naver.com/crystale?NaPm=ct%3Dkuhs1gf0%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3Ddffd876bc2e182670e142c3a99cbb89a421b4140" class="text_hidden naver">크리스탈 e 샵</a>
+                </div>
+            </footer>
+        </div>
         <div id="cursor">e</div>
     </body>
 </html>
