@@ -114,27 +114,30 @@ timer = setInterval(nextSlide, 5000)
 mSlideList[0].className = "on"
 $("#main_sliderList li").on("click", function(e) {
     e.preventDefault();
-    clearInterval(timer)
-    timer = setInterval(nextSlide, 5000)
-    let btnIndex = $(this).index()
-    let num;
-    $("#main_sliderWrap > li").each(function() {
-        let className = $(this).attr("class")
-        let classNum = parseInt(className.substr(5, 1)) - 1
-        if (classNum == btnIndex) {
-            num = $(this).index()
-            // 목록에 현재 슬라이드 표시
-            $("#main_sliderList li").removeClass("on")
-            mSlideList[classNum].className = "on"
-        }
-    })
-    $("#main_sliderWrap > li").eq(num).addClass("on").css("opacity", 0)
-                .animate({opacity: 1}, function() {
-                    for(let i=0; i<num; i++) {
-                        $("#main_sliderWrap").append($("#main_sliderWrap > li:first"))
-                        $("#main_sliderWrap > li:last").removeClass("on")
-                    }
-                })
+    if ($(this).hasClass("on")) return false;
+    else {
+        clearInterval(timer)
+        timer = setInterval(nextSlide, 5000)
+        let btnIndex = $(this).index()
+        let num;
+        $("#main_sliderWrap > li").each(function() {
+            let className = $(this).attr("class")
+            let classNum = parseInt(className.substr(5, 1)) - 1
+            if (classNum == btnIndex) {
+                num = $(this).index()
+                // 목록에 현재 슬라이드 표시
+                $("#main_sliderList li").removeClass("on")
+                mSlideList[classNum].className = "on"
+            }
+        })
+        $("#main_sliderWrap > li").eq(num).addClass("on").css("opacity", 0)
+                    .animate({opacity: 1}, function() {
+                        for(let i=0; i<num; i++) {
+                            $("#main_sliderWrap").append($("#main_sliderWrap > li:first"))
+                            $("#main_sliderWrap > li:last").removeClass("on")
+                        }
+                    })
+    }
 })
 
 /* 추천해요 */
