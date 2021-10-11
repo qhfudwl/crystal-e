@@ -127,7 +127,7 @@
             </nav>
         </div>
         <section id="main_slider">
-            <h2 class="hidden">대표 제품 / 이벤트 슬라이더</h2>
+            <h2 class="hidden">오늘의 대표 제품 / 이벤트</h2>
             <ul id="main_sliderWrap">
                 <li class="slide1"><a href="#" data-imgPath="images/slider/slider1">
                     <p>
@@ -179,7 +179,7 @@
                 </a></li>
             </ul>
             <nav id="main_sliderList">
-                <h3 class="hidden">목록</h3>
+                <h3 class="hidden">이벤트 목록</h3>
                 <ul>
                     <li><a href="#" data-imgPath="images/slider/slider1">이벤트 목록1</a></li>
                     <li><a href="#" data-imgPath="images/slider/slider2">이벤트 목록2</a></li>
@@ -394,8 +394,8 @@
             <section id="categoryBest">
                 <h2>카테고리 베스트</h2>
                 <div id="cbTapWrap">
-                    <section id="cbTap_cloth" class="active">
-                        <h3><a href="#"><span class="icon text_hidden">icon</span>의류</a></h3>
+                    <section id="cbTap_cloth"><!-- 배경으로 넣어서 패딩 넣자(내래이션 : window + ctrl + enter 키) -->
+                        <h3><a href="#">의류</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_cloth_list">
                                 <li class="pList"><a href="#">
@@ -528,7 +528,7 @@
                         </div>
                     </section>
                     <section id="cbTap_beauty">
-                        <h3><a href="#"><span class="icon text_hidden">icon</span>뷰티</a></h3>
+                        <h3><a href="#">뷰티</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_beauty_list">
                                 <li class="pList"><a href="#">
@@ -661,7 +661,7 @@
                         </div>
                     </section>
                     <section id="cbTap_socks">
-                        <h3><a href="#"><span class="icon text_hidden">icon</span>양말</a></h3>
+                        <h3><a href="#">양말</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_socks_list">
                                 <li class="pList"><a href="#">
@@ -794,7 +794,7 @@
                         </div>
                     </section>
                     <section id="cbTap_oral">
-                        <h3><a href="#"><span class="icon text_hidden">icon</span>구강 용품</a></h3>
+                        <h3><a href="#">구강 용품</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_oral_list">
                                 <li class="pList"><a href="#">
@@ -927,7 +927,7 @@
                         </div>
                     </section>
                     <section id="cbTap_goods">
-                        <h3><a href="#"><span class="icon text_hidden">icon</span>잡화</a></h3>
+                        <h3><a href="#">잡화</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_goods_list">
                                 <li class="pList"><a href="#">
@@ -1060,7 +1060,7 @@
                         </div>
                     </section>
                     <section id="cbTap_season">
-                        <h3><a href="#"><span class="icon text_hidden">icon</span>계절 용품</a></h3>
+                        <h3><a href="#">계절 용품</a></h3>
                         <div class="cbListWrap">
                             <ul id="cb_season_list">
                                 <li class="pList"><a href="#">
@@ -1207,36 +1207,36 @@
                     <div id="map">
                         <ul>
                             <li class="point seoul">
-                                <p class="count">100</p>
                                 <p>서울</p>
+                                <p class="count">134<span class="text_hidden">개</span></p>
                             </li>
                             <li class="point incheon">
-                                <p class="count">100</p>
                                 <p>인천</p>
+                                <p class="count">152<span class="text_hidden">개</span></p>
                             </li>
                             <li class="point gangwon">
-                                <p class="count">100</p>
                                 <p>강원</p>
+                                <p class="count">95<span class="text_hidden">개</span></p>
                             </li>
                             <li class="point daejeon">
-                                <p class="count">100</p>
                                 <p>대전</p>
+                                <p class="count">168<span class="text_hidden">개</span></p>
                             </li>
                             <li class="point gwangju">
-                                <p class="count">100</p>
                                 <p>광주</p>
+                                <p class="count">54<span class="text_hidden">개</span></p>
                             </li>
                             <li class="point daegu">
-                                <p class="count">100</p>
                                 <p>대구</p>
+                                <p class="count">238<span class="text_hidden">개</span></p>
                             </li>
                             <li class="point busan">
-                                <p class="count">100</p>
                                 <p>부산</p>
+                                <p class="count">192<span class="text_hidden">개</span></p>
                             </li>
                             <li class="point jeju">
-                                <p class="count">100</p>
                                 <p>제주</p>
+                                <p class="count">8<span class="text_hidden">개</span></p>
                             </li>
                         </ul>
                     </div>
@@ -1283,6 +1283,13 @@
         </div>
         <div id="footerWrap">
             <footer id="footer">
+                <div id="customer_call">
+                    <p>
+                        고객 센터<br>
+                        <span>문의주시면 정성껏 답변해드리겠습니다.</span>
+                    </p>
+                    <p><strong>070-8225-9958</strong></p>
+                </div>
                 <div id="info">
                     <p>
                         대표이사 : 김경호<br>
@@ -1292,13 +1299,6 @@
                         fax : 053-951-9950
                     </p>
                     <small>copyright (c) 2012 crystal-<span>e</span> company, all rights reserved.</small>
-                </div>
-                <div id="customer_call">
-                    <p>
-                        고객 센터<br>
-                        <span>문의주시면 정성껏 답변해드리겠습니다.</span>
-                    </p>
-                    <p><strong>070-8225-9958</strong></p>
                 </div>
                 <div id="link">
                     <a href="https://smartstore.naver.com/crystale?NaPm=ct%3Dkuhs1gf0%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3Ddffd876bc2e182670e142c3a99cbb89a421b4140" class="text_hidden naver">크리스탈 e 샵</a>
