@@ -142,7 +142,6 @@ $("#main_sliderList li").on("click", function(e) {
 
 /* 추천해요 */
 const rdd = document.querySelectorAll("#recommend dl dd")
-const blur = document.querySelector("#blur")
 // 이미지 넣기
 for(let i=0; i<rdd.length; i++) {
     imgPath = rdd[i].children[0].getAttribute("data-imgPath")
@@ -166,7 +165,7 @@ function recommendDown() {
 }
 window.addEventListener("scroll", function() {
     let posY = window.scrollY
-    let recommendY = $("#recommend").position().top - 400
+    let recommendY = $("#recommend").position().top - 500
     if (posY > recommendY && rcState == 0) {
         rcState = 1;
         recommendUp();
@@ -176,3 +175,65 @@ window.addEventListener("scroll", function() {
         recommendDown();
     }
 })
+// 블러처리
+$("#recommend dl dd").hover(function() {
+    $("#recommend dl dd").not($(this)).css({ filter: "blur(5px)"})
+  }, function() {
+    $("#recommend dl dd").css({ filter: "blur(0)"})
+})
+/* 새로 나왔어요 */
+
+let newState = 0;
+
+// 내려가면 올라오기
+function newUp() {
+    $("#new h2").animate({top: 0, opacity: 1}, 500)
+    $("#newList").delay(100).animate({top: 0, opacity: 1}, 500)
+    $("#new_move").delay(200).animate({top: 0, opacity: 1}, 500)
+}
+function newDown() {
+    $("#new h2").animate({top: 100, opacity: 0}, 100)
+    $("#newList").delay(100).animate({top: 100, opacity: 0}, 100)
+    $("#new_move").delay(200).animate({top: 100, opacity: 0}, 100)
+}
+window.addEventListener("scroll", function() {
+    let posY = window.scrollY
+    let newY = $("#new").position().top - 500
+    if (posY > newY && newState == 0) {
+        newState = 1;
+        newUp();
+    }
+    else if (posY < newY && newState == 1) {
+        newState = 0;
+        newDown();
+    }
+})
+
+const newList = document.getElementById("newList")
+const newListWrap = document.getElementById("newListWrap")
+let newTimer;
+let newListState = 0;
+
+// 슬라이드 이동 -> newList 가 움직여야한다.
+function newSlideNext() {
+    $("#newList").css({left: "-=" + 1})
+}
+function newSlidePrev() {
+    $("#newList").css({left: "+=" + 1})
+}
+newTimer = setInterval(function() {
+    let newListWrapWidth = newListWrap.offsetWidth // 슬라이드를 감싸는 요소 길이
+    let newListWidth = newList.offsetWidth // 슬라이드 총 길이
+    let newListX = newListWrapWidth - newListWidth // 슬라이드가 움직여야하는 길이 (음수)
+    let newListPos = parseInt($("#newList").css("left")) // 슬라이드 현재 위치
+    if (newListPos >= 0) newListState = 1;
+    else if (newListPos <= newListX) newListState = 0;
+    if (newListState == 1 && newState == 1) newSlideNext();
+    else if (newListState == 0 && newState == 1) newSlidePrev();
+}, 5)
+// 밑에 슬라이드랑 같이 움직이기
+// 1000 일 때 500 이면 - 1 : 0.5
+// 2 움직일 때 1움직인다. - 1 : 0.5
+// 250일 때 500이면 1 : 2
+// 1움직일 때 2움직인다. 1 : 2
+
