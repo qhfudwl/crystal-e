@@ -195,10 +195,12 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 /* 메인 */
 /* 각 섹션 공통 */
 #main > section {padding: 60px 0;}
-#main > section h2 {text-align: center; font-size: 55px; margin-bottom: 60px;}
+#main > section h2 {
+    text-align: center; font-size: 55px; margin-bottom: 60px;
+    position: relative; top: 100px; opacity: 0;
+}
 /* 추천해요 */
 #recommend {background-color: #efefef;}
-#recommend h2 {position: relative; top: 100px; opacity: 0;}
 #recommend dl {
      width: 75%; margin: 0 auto; padding-bottom: 20px;
     display: grid; grid-template-columns: auto auto auto; gap: 10px;
@@ -209,7 +211,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     border: 1px solid #afafaf;
     position: relative; top: 300px; opacity: 0;
 }
-#recommend dl dd:hover {box-shadow: 0 0 10px #4d4d4d; transform: scale(1.05);}
+#recommend dl dd:hover {box-shadow: 0 0 10px #4d4d4d; transform: scale(1.1); z-index: 1;}
 #recommend dl dd a {
     display: block; height: 300px; box-sizing: border-box;
     padding: 20px 0 0 20px; transition-duration: 0.3s;
@@ -223,12 +225,11 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 /* 새로 나왔어요 */
 #new {}
 #new h2 {}
-#newListWrap {width: 95%; margin: 0 auto; 
-    overflow: hidden;
-}
+#newListWrap {width: 95%; margin: 0 auto; overflow: hidden;}
 #newList {
-    width: 220%; display: grid; column-gap: 30px;
+    width: 220%; display: grid; column-gap: 30px; padding: 0 30px;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    position: relative; top: 100px; left: 0; opacity: 0;
 }
 .pList {
     border: 1px solid #c7c7c7; border-radius: 2%; overflow: hidden;
@@ -260,7 +261,10 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 .p_status p:nth-child(3) {float: right;}
 .p_status p em {color: #c91c1c; font-weight: bold;}
 /* 위치 */
-#new_move {clear: both; padding: 80px 0 30px;}
+#new_move {
+    clear: both; padding: 80px 0 30px;
+    position: relative; top: 100px; opacity: 0;
+}
 #new_position {
     margin: 0 auto; width: 500px; height: 2px;
     background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59, #c471ed, #12c2e9);
@@ -459,5 +463,5 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #cursor {
     font-family: "SB어그로B", sans-serif; color: #c91c1c; font-size: 1.3em;
     position: absolute; z-index: 10000; transform: translate(40%, -70%);
-    transition: all 0.1s linear; pointer-events: none;
+    transition: font-size 0.1s linear; pointer-events: none;
 }
