@@ -211,29 +211,204 @@ window.addEventListener("scroll", function() {
 
 const newList = document.getElementById("newList")
 const newListWrap = document.getElementById("newListWrap")
+const newPosition = document.getElementById("new_position")
+const newPoint = document.querySelector("#new_position a")
 let newTimer;
 let newListState = 0;
+let newListWrapWidth, newListWidth, newListX, newListPos, newPositionWidth, newMovePos;
+let newPointPos;
 
 // 슬라이드 이동 -> newList 가 움직여야한다.
+newTimer = setInterval(newSlideMove, 10)
 function newSlideNext() {
-    $("#newList").css({left: "-=" + 1})
+    if (newListPos > 1) {
+        $("#newList").css({left: 0})
+        $("#new_position a").css({left: 0})
+    }
+    $("#newList").css({left: "-=" + 1}) // 슬라이드 리스트
+    $("#new_position a").css({left: newListPos * newMovePos}) // 슬라이드 아래에 위치 표시 요소
 }
 function newSlidePrev() {
+    if (newListPos < newListX-1) {
+        $("#newList").css({left: newListX})
+        $("#new_position a").css({left: newPositionWidth})
+    }
     $("#newList").css({left: "+=" + 1})
+    $("#new_position a").css({left: newListPos * newMovePos})
 }
-newTimer = setInterval(function() {
-    let newListWrapWidth = newListWrap.offsetWidth // 슬라이드를 감싸는 요소 길이
-    let newListWidth = newList.offsetWidth // 슬라이드 총 길이
-    let newListX = newListWrapWidth - newListWidth // 슬라이드가 움직여야하는 길이 (음수)
-    let newListPos = parseInt($("#newList").css("left")) // 슬라이드 현재 위치
+function newSlideMove() {
+    newListWrapWidth = newListWrap.offsetWidth // 슬라이드를 감싸는 요소 길이
+    newListWidth = newList.offsetWidth // 슬라이드 총 길이
+    newListX = newListWrapWidth - newListWidth // 슬라이드가 움직여야하는 길이 (음수)
+    newListPos = parseInt($("#newList").css("left")) // 슬라이드 현재 위치
+    newPositionWidth = newPosition.offsetWidth - newPoint.offsetWidth // 아래 위치 나타내는 요소 길이
+    // 비율 계산법 = 특정값 / 전체값 * 100
+    newMovePos = newPositionWidth / newListX // 슬라이드 길이와의 비율
+    // 끝에 도달 시 방향 전환
     if (newListPos >= 0) newListState = 1;
     else if (newListPos <= newListX) newListState = 0;
     if (newListState == 1 && newState == 1) newSlideNext();
     else if (newListState == 0 && newState == 1) newSlidePrev();
-}, 5)
-// 밑에 슬라이드랑 같이 움직이기
-// 1000 일 때 500 이면 - 1 : 0.5
-// 2 움직일 때 1움직인다. - 1 : 0.5
-// 250일 때 500이면 1 : 2
-// 1움직일 때 2움직인다. 1 : 2
+}
+// 위치 표시 요소를 누르거나 슬라이드 리스트를 눌러서 움직일 수 있어야 한다.
 
+let clickPosX1, clickPosX2;
+let newListMove = 1; // 0:동작 불가 1: 동작 가능
+
+// 이동해야하는 값 = 마우스 업 위치 - 마우스 다운 시 위치
+// 근데 마우스를 클릭하는 동안 그만큼 움직여야한다 (동시에)
+newListWrap.addEventListener("mouseenter", function(e) {
+    e.preventDefault();
+    clearInterval(newTimer)
+})
+newList.addEventListener("mousedown", function(e) {
+    e.preventDefault();
+    let newListLeft = $("#newList").position().left // 윈도우에서 슬라이드의 왼쪽 좌표값
+    $("#newList").data("clickX", e.pageX - (newListLeft - parseInt($("#newList").css("padding-left"))))
+    $(document).on("mousemove", function(e) {
+        newListMove = 0;
+        newListPos = parseInt($("#newList").css("left"))
+        $("#newList").css({left: e.pageX - $("#newList").data("clickX") + "px"})
+        if (newListPos > 0 || newListPos < newListX) {
+            if (newListPos > 0) $("#new_position a").css({left: 0})
+            else if (newListPos < newListX) $("#new_position a").css({left: newPositionWidth})
+        }
+        else $("#new_position a").css({left: newListPos * newMovePos})
+        if (newListPos > 100) {
+            $("#newList:not(:animated)").animate({left: 0})
+        }
+        else if (newListPos < newListX - 100) {
+            $("#newList:not(:animated)").animate({left: newListX})
+        }
+    })
+    $("#newList a").on("click", function() {
+        // if (newListMove == 0) return false;
+        return false
+    })
+})
+$(document).on("mouseup", function(e) {
+    setTimeout(function() {
+        newListMove = 1
+    }, 100)
+    e.preventDefault();
+    $(document).off("mousemove")
+})
+newListWrap.addEventListener("mouseleave", function() {
+    newTimer = setInterval(newSlideMove, 10)
+})
+// 밑에 버튼으로 슬라이드 위치 조절
+newPoint.addEventListener("click", function(e) {
+    e.preventDefault();
+})
+newPoint.addEventListener("mouseenter", function() {
+    clearInterval(newTimer)
+})
+newPoint.addEventListener("mouseleave", function() {
+    newTimer = setInterval(newSlideMove, 10)
+})
+newPosition.addEventListener("mousedown", function(e) {
+    e.preventDefault();
+    let newPointLeft = parseInt($("#new_position a").css("left"))
+    $("#new_position a").data("clickX", e.pageX - newPointLeft)
+    $(document).on("mousemove", function(e) {
+        newListMove = 0;
+        newPointPos = parseInt($("#new_position a").css("left"))
+        newMovePos = newListX / newPositionWidth
+        $("#new_position a").css({left: e.pageX - $("#new_position a").data("clickX") + "px"})
+        $("#newList").css({left: newPointPos * newMovePos})
+    })
+})
+// 새로 나왔어요 위치에 오면 사이드 바 안보이게 한다.
+window.addEventListener("scroll", function(e) {
+    let posY = window.scrollY
+    let newY = $("#new").position().top - 500
+    let categoryY = $("#categoryBest").position().top - 500
+    if (posY > newY && posY < categoryY) {
+        $("#aside_product").stop().fadeOut(100)
+    }
+    else {
+        $("#aside_product").stop().fadeIn(100)
+    }
+})
+
+/* 카테고리 베스트 */
+let categoryState = 0;
+$("#categoryBest section:first .cbListWrap").css({display: "block", opacity: 1})
+$("#categoryBest section:first").addClass("active")
+// 위로 떠오르기
+function categoryUp() {
+    $("#categoryBest h2").animate({top: 0, opacity: 1}, 500)
+    $("#cbTapWrap").delay(100).animate({top: 0, opacity: 1}, 500)
+}
+function categoryDown() {
+    $("#categoryBest h2").animate({top: 100, opacity: 0}, 100)
+    $("#cbTapWrap").delay(100).animate({top: 100, opacity: 0}, 100)
+}
+window.addEventListener("scroll", function() {
+    let posY = window.scrollY
+    let categoryY = $("#categoryBest").position().top - 500
+    if (posY > categoryY && categoryState == 0) {
+        categoryState = 1;
+        categoryUp();
+    }
+    else if (posY < categoryY && categoryState == 1) {
+        categoryState = 0;
+        categoryDown();
+    }
+})
+
+// 탭 키 누를 때 그 화면으로 변경하기
+$("#categoryBest section h3").on("click", function(e) {
+    e.preventDefault();
+    $("#categoryBest section .cbListWrap").fadeOut()
+    $(this).next().fadeIn()
+    $("#categoryBest section").removeClass("active")
+    $(this).parent().addClass("active")
+})
+$("#categoryBest a").on("click", function(e) {
+    e.preventDefault();
+})
+
+// 상품 클릭 시 사이드 바인 최근 본 상품으로 이미지 들어가기
+let rcProductNum = 0
+$(".pList a").on("click", function() {
+    if (newListMove == 1) {
+        let recentProduct = document.createElement("li")
+        let recentProductLink = document.createElement("a")
+        recentProduct.appendChild(recentProductLink) // 새로운 링크
+        recentProduct.style.backgroundImage = "url(" + $(this).find("img").attr("src") + ")"
+        recentProduct.children[0].innerText = $(this).find(".p_name").children("p:first").text()
+        recentProduct.children[0].className = "text_hidden"
+        recentProduct.children[0].style.display = "block"
+        $("#as_recent_product ul li.no_item").remove()
+        if (rcProductNum == 5) {
+            $("#as_recent_product ul li:last").remove()
+        }
+        $("#as_recent_product ul").prepend(recentProduct)
+        if (rcProductNum < 5) rcProductNum++
+    }
+})
+
+/* 거래처 회사 */
+let clientState = 0;
+// 위로 떠오르기
+function clientUp() {
+    $("#client h2").animate({top: 0, opacity: 1}, 500)
+    $("#clientList").delay(100).animate({top: 0, opacity: 1}, 500)
+}
+function clientDown() {
+    $("#client h2").animate({top: 100, opacity: 0}, 100)
+    $("#clientList").delay(100).animate({top: 100, opacity: 0}, 100)
+}
+window.addEventListener("scroll", function() {
+    let posY = window.scrollY
+    let clientY = $("#client").position().top - 500
+    if (posY > clientY && clientState == 0) {
+        clientState = 1;
+        clientUp();
+    }
+    else if (posY < clientY && clientState == 1) {
+        clientState = 0;
+        clientDown();
+    }
+})
