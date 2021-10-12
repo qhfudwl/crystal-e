@@ -49,80 +49,105 @@ fontBtn[1].addEventListener("click", function(e) {
 
 // 보조 메뉴 보이게
 const topWrap = document.getElementById("topWrap")
-const gnb = document.getElementById("gnb")
-const oneDsnb = document.querySelectorAll(".one_depth_snb")
-let menuState;
-$("#gnb a").on("click", function(e) {
-    e.preventDefault()
-})
-$(window).resize(function() {
-    $("#gnb a").removeClass("active")
-    $("#gnb ul").hide()
-    if (window.innerWidth > 800) menuBig();
-    else menuSmall();
-})
-if (window.innerWidth > 800) menuBig();
-else menuSmall();
+// 큰 화면인 경우
 function menuBig() {
-    $("#gnb li").on("mouseenter", function(e) {
+    $("#menuBig .gnb > li").on("mouseenter", function(e) {
         e.preventDefault();
         topWrap.style.backgroundColor = "#fff";
         $(this).children("a").addClass("active")
-        $(this).children(".one_depth_snb").stop().slideDown(200)
+        $(this).children("#menuBig .one_depth_snb").stop().slideDown(200)
+
     })
-    $("#gnb li").on("mouseleave", function(e) {
+    $("#menuBig .gnb > li").on("mouseleave", function(e) {
         e.preventDefault();
         $(this).children("a").removeClass("active")
-        $(this).children(".one_depth_snb").stop().slideUp(200)
+        $(this).children("#menuBig .one_depth_snb").stop().slideUp(200)
     })
-    topWrap.addEventListener("mouseleave", function() {
+    $("#topWrap").on("mouseleave", function() {
         setTimeout(function() {
             topWrap.style.backgroundColor = "rgba(255, 255, 255, 0.9)"
         }, 200)
     })
 }
+// 작은 화면의 경우
+$("#toggleBtn").on("click", function(e) {
+    e.preventDefault();
+    if ($("#menuSmall").hasClass("active")) $("#menuSmall").removeClass("active")
+    else $("#menuSmall").addClass("active")
+})
 function menuSmall() {
-    $("#gnb > li > a").on("click", function(e) {
-        e.preventDefault();
-        if ($(this).hasClass("active")) {
-            $(this).removeClass("active")
-            $(this).next().slideUp(200)
-        }
-        else {
-            $("#gnb > li > a").not(this).removeClass("active")
-            $(this).addClass("active")
-            $("#gnb > li > a").not(this).next().slideUp(200)
-            $(this).next().stop().slideDown(200)
-        }
-    })
-    $("#gnb .one_depth_snb > li > a").on("click", function(e) {
-        e.preventDefault();
-        if ($(this).hasClass("active")) {
-            $(this).removeClass("active")
-            $(this).next().slideUp(200)
-        }
-        else {
-            $("#gnb .one_depth_snb > li > a").removeClass("active")
-            $(this).addClass("active")
-            $("#gnb .one_depth_snb > li > a").not(this).next().slideUp(200)
-            $(this).next().stop().slideDown(200)
-        }
-    })
+    $("#menuSmall .two_depth_snb").hide()
+    $("#menuSmall .one_depth_snb").hide()
 
+    $("#menuSmall .gnb > li > a").on("click", function(e) {
+        e.preventDefault();
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active")
+            $(this).next().slideUp(200)
+        }
+        else {
+            $("#menuSmall .gnb > li > a").not(this).removeClass("active")
+            $(this).addClass("active")
+            $("#menuSmall .gnb > li > a").not(this).next().slideUp(200)
+            $(this).next().stop().slideDown(200)
+        }
+        $("#menuSmall .gnb .one_depth_snb > li > a").next().slideUp(200)
+        $("#menuSmall .gnb .one_depth_snb > li > a").removeClass("active")
+    })
+    $("#menuSmall .gnb .one_depth_snb > li > a").on("click", function(e) {
+        e.preventDefault();
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active")
+            $(this).next().slideUp(200)
+        }
+        else {
+            $("#menuSmall .gnb .one_depth_snb > li > a").removeClass("active")
+            $(this).addClass("active")
+            $("#menuSmall .gnb .one_depth_snb > li > a").not(this).next().slideUp(200)
+            $(this).next().stop().slideDown(200)
+        }
+    })
+    
+}
+menuView();
+menuBig();
+menuSmall();
+$(window).resize(function() {
+    menuView();
+})
+// 각 메뉴 show / hide
+function menuView() {
+    if (window.innerWidth > 800) {
+        $("#toggleBtn").css({display: "none"})
+        $("#menuBig").css({display: "block"})
+        $("#menuSmall").removeClass("active")
+        $("#menuSmall").css({display: "none"})
+    }
+    else {
+        $("#toggleBtn").css({display: "block"})
+        $("#menuBig").css({display: "none"})
+        $("#menuSmall").css({display: "block"})
+    }
 }
 
-
 // 아이디로 보내기
-$("#gnb li:first ul li a").on("click", function(e) {
+$(".gnb .one_depth_snb li a").on("click", function(e) {
     e.preventDefault();
     let target = $($(this).attr("href")).position().top - topWrap.offsetHeight
+    console.log(target)
     $("html, body:not(:animated)").animate({scrollTop: target})
 })
 
 // 아래로 휠 - 숨기기 / 위로 휠 - 나타나기
 window.addEventListener("wheel", function(e) {
-    if (e.wheelDelta < 0) topWrap.className = "slideUp"
-    else topWrap.removeAttribute("class");
+    if (e.wheelDelta < 0) {
+        topWrap.className = "slideUp"
+        $("#toggleBtn").addClass("slideUp")
+    }
+    else {
+        topWrap.removeAttribute("class");
+        $("#toggleBtn").removeClass("slideUp")
+    }
 })
 
 /* 슬라이더 */
@@ -136,6 +161,7 @@ const mSlideList = document.querySelectorAll("#main_sliderList li")
 let mainNum = 0;
 
 // 위치
+mSlider.style.marginTop = topWrap.offsetHeight + "px"
 window.addEventListener("resize", function() {
     mSlider.style.marginTop = topWrap.offsetHeight + "px"
 })
@@ -199,8 +225,13 @@ $("#main_sliderList li").on("click", function(e) {
 })
 
 // 윈도우 리사이즈 시 슬라이드 포지션 변경
-window.addEventListener("resize", function() {
-    if (window.innerWidth < 1500) {
+function slidePosition() {
+    if (window.innerWidth < 800) {
+        $("#main_sliderWrap li").each(function() {
+            $(this).css({backgroundPositionX: -(2300 - window.innerWidth)})
+        })
+    }
+    else if (window.innerWidth < 1500) {
         $("#main_sliderWrap li").each(function() {
             $(this).css({backgroundPositionX: -(2500 - window.innerWidth)})
         })
@@ -210,6 +241,10 @@ window.addEventListener("resize", function() {
             $(this).css({backgroundPositionX: "center"})
         })
     }
+}
+slidePosition()
+window.addEventListener("resize", function() {
+    slidePosition()
 })
 
 /* 추천해요 */
@@ -560,5 +595,16 @@ window.addEventListener("scroll", function() {
     else if (posY < clientY && clientState == 1) {
         clientState = 0;
         clientDown();
+    }
+})
+
+/* 장바구니, 최근 본 상품 */
+window.addEventListener("scroll", function() {
+    console.log(window.scrollY)
+    if (window.scrollY >= 500) {
+        $("#aside_product").css({position: "fixed", top: 300})
+    }
+    else {
+        $("#aside_product").css({position: "absolute", top: 800})
     }
 })
