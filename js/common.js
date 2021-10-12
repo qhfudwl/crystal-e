@@ -51,20 +51,66 @@ fontBtn[1].addEventListener("click", function(e) {
 const topWrap = document.getElementById("topWrap")
 const gnb = document.getElementById("gnb")
 const oneDsnb = document.querySelectorAll(".one_depth_snb")
-$("#gnb li").on("mouseenter", function() {
-    topWrap.style.backgroundColor = "#fff";
-    $(this).children("a").addClass("active")
-    $(this).children(".one_depth_snb").stop().slideDown(200)
+let menuState;
+$("#gnb a").on("click", function(e) {
+    e.preventDefault()
 })
-$("#gnb li").on("mouseleave", function() {
-    $(this).children("a").removeClass("active")
-    $(this).children(".one_depth_snb").stop().slideUp(200)
+$(window).resize(function() {
+    $("#gnb a").removeClass("active")
+    $("#gnb ul").hide()
+    if (window.innerWidth > 800) menuBig();
+    else menuSmall();
 })
-topWrap.addEventListener("mouseleave", function() {
-    setTimeout(function() {
-        topWrap.style.backgroundColor = "rgba(255, 255, 255, 0.9)"
-    }, 200)
-})
+if (window.innerWidth > 800) menuBig();
+else menuSmall();
+function menuBig() {
+    $("#gnb li").on("mouseenter", function(e) {
+        e.preventDefault();
+        topWrap.style.backgroundColor = "#fff";
+        $(this).children("a").addClass("active")
+        $(this).children(".one_depth_snb").stop().slideDown(200)
+    })
+    $("#gnb li").on("mouseleave", function(e) {
+        e.preventDefault();
+        $(this).children("a").removeClass("active")
+        $(this).children(".one_depth_snb").stop().slideUp(200)
+    })
+    topWrap.addEventListener("mouseleave", function() {
+        setTimeout(function() {
+            topWrap.style.backgroundColor = "rgba(255, 255, 255, 0.9)"
+        }, 200)
+    })
+}
+function menuSmall() {
+    $("#gnb > li > a").on("click", function(e) {
+        e.preventDefault();
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active")
+            $(this).next().slideUp(200)
+        }
+        else {
+            $("#gnb > li > a").not(this).removeClass("active")
+            $(this).addClass("active")
+            $("#gnb > li > a").not(this).next().slideUp(200)
+            $(this).next().stop().slideDown(200)
+        }
+    })
+    $("#gnb .one_depth_snb > li > a").on("click", function(e) {
+        e.preventDefault();
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active")
+            $(this).next().slideUp(200)
+        }
+        else {
+            $("#gnb .one_depth_snb > li > a").removeClass("active")
+            $(this).addClass("active")
+            $("#gnb .one_depth_snb > li > a").not(this).next().slideUp(200)
+            $(this).next().stop().slideDown(200)
+        }
+    })
+
+}
+
 
 // 아이디로 보내기
 $("#gnb li:first ul li a").on("click", function(e) {
@@ -392,8 +438,8 @@ window.addEventListener("scroll", function() {
 // 탭 키 누를 때 그 화면으로 변경하기
 $("#categoryBest section h3").on("click", function(e) {
     e.preventDefault();
-    $("#categoryBest section .cbListWrap").fadeOut()
-    $(this).next().fadeIn()
+    $("#categoryBest section .cbListWrap").hide()
+    $(this).next().show()
     $("#categoryBest section").removeClass("active")
     $(this).parent().addClass("active")
 })
