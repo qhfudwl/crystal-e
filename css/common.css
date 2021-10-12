@@ -108,52 +108,101 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     border-radius: 50%; font-size: 0.9em;
 }
 /* 메뉴 */
-#menu {}
-/* 메뉴 토글 버튼 */
-#toggleBtn {
-    display: block; background-color: rgba(255, 255, 255, 0); width: 25px; height: 20px;
-    border: 3px solid #000; border-right: 0; border-left: 0;
-    position: absolute; top: 15px; right: 15px;
-}
-#toggleBtn::after {
-    content: ""; position: absolute; top: 50%; right: 0; transform: translateY(-50%);
-    width: 70%; height: 25%; border: 3px solid #000; border-right: 0; border-left: 0;
-}
-/* 주메뉴 */
-#gnb {
+/* 주메뉴 - menuBig */
+#menuBig .gnb {
     width: 60%; margin: 0 auto;
     display: flex; flex-flow: row nowrap; justify-content: space-between;
 }
-#gnb > li {float: left;}
-#gnb > li > a {
+#menuBig .gnb > li {float: left;}
+#menuBig .gnb > li > a {
     display: block; width: 100%; padding: 10px 0 20px;
     text-align: center; font-size: 1.1em; font-weight: bold;
     position: relative;
 }
-#gnb > li > a::after {
+#menuBig .gnb > li > a::after {
     content: ""; width: 0; height: 3px; background-color: #c91c1c;
     position: absolute; bottom: 0; left: 50%; transition-duration: 0.3s;
 }
-#gnb > li > a:hover::after {width: 140%; left: -20%;}
-#gnb > li > a.active::after {width: 140%; left: -20%;}
+#menuBig .gnb > li > a:hover::after {width: 140%; left: -20%;}
+#menuBig .gnb > li > a.active::after {width: 140%; left: -20%;}
 /* 보조 메뉴 - 1 */
-#gnb .one_depth_snb {
+#menuBig .gnb .one_depth_snb {
     position: absolute; left: 0; width: 100%; box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
     padding: 30px 10%; background: #fff;
     display: none;
 }
-#gnb .one_depth_snb > li {float: left; width: 14%;}
-#gnb .one_depth_snb > li > a {
+#menuBig .gnb .one_depth_snb > li {float: left; width: 14%;}
+#menuBig .gnb .one_depth_snb > li > a {
     display: block; padding: 10px 0 0; font-weight: bold; font-size: 1em;
 }
-#gnb .one_depth_snb > li > a:hover {text-decoration: underline;}
+#menuBig .gnb .one_depth_snb > li > a:hover {text-decoration: underline;}
 /* 보조 메뉴 - 2 */
-#gnb .two_depth_snb {padding: 10px 0;}
-#gnb .two_depth_snb li {}
-#gnb .two_depth_snb li a {
+#menuBig .gnb .two_depth_snb {padding: 10px 0;}
+#menuBig .gnb .two_depth_snb li {}
+#menuBig .gnb .two_depth_snb li a {
     display: block; padding: 3px 0; font-size: 0.9em; color: #595959;
 }
-#gnb .two_depth_snb > li > a:hover {text-decoration: underline;}
+#menuBig .gnb .two_depth_snb > li > a:hover {text-decoration: underline;}
+
+/* 메뉴 토글 버튼 */
+#toggleBtn {
+    display: block; background-color: rgba(255, 255, 255, 0); width: 25px; height: 20px;
+    border: 3px solid #000; border-right: 0; border-left: 0; z-index: 10001;
+    position: fixed; top: 15px; right: 15px; transition-duration: 0.3s;
+}
+#toggleBtn.slideUp {transform: translateY(-200%);}
+#toggleBtn:hover {width: 15px;}
+#menuSmall.active + #toggleBtn {width: 15px; border-color: #c91c1c;}
+#toggleBtn::after {
+    content: ""; position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+    width: 15px; height: 5px; border: 3px solid #000; border-right: 0; border-left: 0;
+    transition-duration: 0.3s;
+}
+#toggleBtn:hover::after {width: 25px;}
+#menuSmall.active + #toggleBtn::after {width: 25px; border-color: #c91c1c;}
+/* 주메뉴 - menuSmall */
+#menuSmall {
+    position: fixed; top: 0; right: -100%; z-index: 10000; transition-duration: 0.3s;
+    width: 80vw; height: 100vh; background: #fff; padding-top: 70px; box-sizing: border-box;
+}
+#menuSmall.active {right: 0; box-shadow: -40px 0 40px rgba(0, 0, 0, 0.3);}
+#menuSmall .gnb {
+    width: 100%;
+}
+#menuSmall .gnb > li {border-bottom: 1px solid #b1b1b1;}
+#menuSmall .gnb > li > a {
+    display: block; padding: 20px 0; position: relative; font-size: 1.1em; font-weight: bold;
+    text-indent: 15px;
+}
+#menuSmall .gnb > li > a::after {
+    content: ""; position: absolute; top: 50%; right: 15px; transform: translateY(-50%);
+    width: 30px; height: 30px; background: url(../images/crystal-e_arrow_off.png) no-repeat 100% / 120px;
+}
+#menuSmall .gnb > li > a:hover::after {background-image: url(../images/crystal-e_arrow_on.png);}
+#menuSmall .gnb > li > a.active::after {background-position-x: 66%;}
+#menuSmall .gnb > li > a.active:hover::after {background-image: url(../images/crystal-e_arrow_on.png);}
+/* 보조 메뉴 - 1 */
+#menuSmall .gnb .one_depth_snb {
+    background: #e0e0e0; display: none;
+}
+#menuSmall .gnb .one_depth_snb > li {border-bottom: 1px solid #b1b1b1;}
+#menuSmall .gnb .one_depth_snb > li:last-of-type {border: 0;}
+#menuSmall .gnb .one_depth_snb > li > a {
+    display: block; text-indent:15px; padding: 20px 0; font-size: 1em; position: relative;
+}
+#menuSmall .gnb .one_depth_snb > li > a.exist_two::after {
+    content: ""; position: absolute; top: 50%; right: 15px; transform: translateY(-50%);
+    width: 30px; height: 30px; background: url(../images/crystal-e_arrow_off.png) no-repeat 100% / 120px;
+}
+
+#menuSmall .gnb .one_depth_snb > li > a.exist_two:hover::after {background-image: url(../images/crystal-e_arrow_on.png);}
+#menuSmall .gnb .one_depth_snb > li > a.exist_two.active::after {background-position-x: 66%;}
+#menuSmall .gnb .one_depth_snb > li > a.exist_two.active:hover::after {background-image: url(../images/crystal-e_arrow_on.png);}
+/* 보조 메뉴 - 2 */
+#menuSmall .gnb .two_depth_snb {padding: 5px 0; display: none;}
+#menuSmall .gnb .two_depth_snb > li > a {
+    display: block; padding: 5px 0; text-indent:15px; font-size: 0.9em; color: #4d4d4d;
+}
 /* 슬라이더 */
 #main_slider {
     margin-top: 130px; height: 600px; width: 100%; position: relative;
@@ -405,7 +454,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #clientList li a:hover::after {left: -10%; width: 120%;}
 /* 장바구니, 최근 본 상품 */
 #aside_product {
-    position: fixed; top: 300px; right: 10px; z-index: 1000;
+    position: absolute; top: 800px; right: 10px; z-index: 1000;
 }
 /* 장바구니 */
 #as_basket {
@@ -490,6 +539,8 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 
 /* 반응형 */
 @media all and (max-width: 1200px) {
+    #main_sliderWrap li a p {font-size: 1.5em; display: block;}
+    #main_sliderWrap li a p em {font-size: 2em; -webkit-text-stroke: 1px solid #000;}
     #recommend dl {
         grid-template-columns: auto auto;
    }
@@ -502,51 +553,21 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #search {width: 80%; margin: 0 auto; position: relative;}
     #check {position: absolute; top: 50%; right: 5px; transform: translateY(-50%);}
     #option {position: absolute; top: 15px; right: 35px;}
-    /* 메뉴 꾸미기 */
-    #menu {
-        position: fixed; top: 0; right: 0; background: #fff;
-        height: 100vh;
+    /* 슬라이더 */
+    #main_slider {height: 600px;}
+    #main_sliderList {
+        top: 80%; left: 50%; transform: translateX(-50%); right: auto; width: 100%;
+        background: royalblue;
     }
-    #gnb {width: 75vw; flex-direction: column; margin-top: 90px;}
-    #gnb > li {float: none; border-bottom: 1px solid #c7c7c7; width: 100%;}
-    #gnb > li > a {
-        text-indent: 20px; text-align: left; padding: 20px 0;
+    #main_sliderList ul {
+        display: flex; flex-flow: row wrap; justify-content: space-around;
     }
-    #gnb > li > a::after {
-        width: 30px; height: 30px; left: auto; right: 10px; top: 50%; transform: translateY(-50%);
-        background: url(../images/crystal-e_arrow_off.png) no-repeat 100% / 120px;
+    #main_sliderList ul li {
+        overflow: hidden; width: 23%;
     }
-    #gnb > li > a:hover::after {
-        width: 30px; left: auto;
-        background-image: url(../images/crystal-e_arrow_on.png);
+    #main_sliderList ul li a {
+        font-size: 0.9em; padding: 10px;
     }
-    #gnb > li > a.active::after {
-        width: 30px; left: auto;
-        background-image: url(../images/crystal-e_arrow_on.png);
-    }
-    #gnb .one_depth_snb {
-        position: static; padding: 0; box-shadow: none;
-        background: #e7e7e7;
-    }
-    #gnb .one_depth_snb > li {float: none; width: 100%;}
-    #gnb .one_depth_snb > li > a {
-        padding: 20px 0; text-indent: 30px; border-top: 1px solid #c7c7c7;
-        position: relative;
-    }
-    #gnb .one_depth_snb > li > a::after {
-        content: ""; position: absolute;
-        width: 30px; height: 30px; right: 10px; top: 50%; transform: translateY(-50%);
-        background: url(../images/crystal-e_arrow_off.png) no-repeat 100% / 120px;
-    }
-    #gnb .one_depth_snb > li > a:hover {text-decoration: none;}
-    #gnb .one_depth_snb > li > a:hover::after {
-        background-image: url(../images/crystal-e_arrow_on.png);
-    }
-    #gnb .one_depth_snb > li > a.active::after {
-        background-image: url(../images/crystal-e_arrow_on.png);
-    }
-    #gnb .two_depth_snb {display: none;}
-    #gnb .two_depth_snb li a {text-indent: 30px; padding: 10px 0;}
     /* 추천해요 */
     #recommend dl {
         grid-template-columns: auto;
