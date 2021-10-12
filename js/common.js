@@ -72,13 +72,15 @@ function menuBig() {
 // 작은 화면의 경우
 $("#toggleBtn").on("click", function(e) {
     e.preventDefault();
-    if ($("#menuSmall").hasClass("active")) $("#menuSmall").removeClass("active")
+    if ($("#menuSmall").hasClass("active")) {
+        $("#menuSmall").removeClass("active")
+        $("#menuSmall a").removeClass("active")
+        $("#menuSmall .gnb .one_depth_snb").hide()
+        $("#menuSmall .gnb .two_depth_snb").hide()
+    }
     else $("#menuSmall").addClass("active")
 })
 function menuSmall() {
-    $("#menuSmall .two_depth_snb").hide()
-    $("#menuSmall .one_depth_snb").hide()
-
     $("#menuSmall .gnb > li > a").on("click", function(e) {
         e.preventDefault();
         if ($(this).hasClass("active")) {
@@ -91,7 +93,7 @@ function menuSmall() {
             $("#menuSmall .gnb > li > a").not(this).next().slideUp(200)
             $(this).next().stop().slideDown(200)
         }
-        $("#menuSmall .gnb .one_depth_snb > li > a").next().slideUp(200)
+        $("#menuSmall .gnb .one_depth_snb > li > a").next().hide()
         $("#menuSmall .gnb .one_depth_snb > li > a").removeClass("active")
     })
     $("#menuSmall .gnb .one_depth_snb > li > a").on("click", function(e) {
@@ -284,7 +286,7 @@ window.addEventListener("scroll", function() {
 })
 // 블러처리
 $("#recommend dl dd").hover(function() {
-    $("#recommend dl dd").not($(this)).css({ filter: "blur(5px)"})
+    $("#recommend dl dd").not($(this)).css({ filter: "blur(2px)"})
   }, function() {
     $("#recommend dl dd").css({ filter: "blur(0)"})
 })
@@ -293,9 +295,9 @@ $("#recommend dl dd").hover(function() {
 let newState = 0;
 
 // 이미지 설명 넣기
-$(".pList").each(function() {
-    $(this).find("img").attr("alt", $(this).find(".p_name p:first").text())
-})
+// $(".pList").each(function() {
+//     $(this).find("img").attr("alt", $(this).find(".p_name p:first").text())
+// })
 
 // 내려가면 올라오기
 function newUp() {
@@ -328,7 +330,7 @@ const newPoint = document.querySelector("#new_position a")
 let newTimer;
 let newListState = 0;
 let newListWrapWidth, newListWidth, newListX, newListPos, newPositionWidth, newMovePos;
-let newPointPos;
+let newPointPos, newListLeft, newPointLeft;
 
 // 슬라이드 이동 -> newList 가 움직여야한다.
 newTimer = setInterval(newSlideMove, 10)
@@ -373,24 +375,28 @@ newListWrap.addEventListener("mouseenter", function(e) {
     e.preventDefault();
     clearInterval(newTimer)
 })
-newList.addEventListener("mousedown", function(e) {
+newList.addEventListener("mousedown", function(e){
     e.preventDefault();
-    let newListLeft = $("#newList").position().left // 윈도우에서 슬라이드의 왼쪽 좌표값
-    $("#newList").data("clickX", e.pageX - (newListLeft - parseInt($("#newList").css("padding-left"))))
+    newListWidth = parseInt($("#newList").width()) + parseInt($("#newList").css("padding-left"))*2
+    newListWrapWidth = parseInt($("#newListWrap").width())
+    newListX = newListWrapWidth - newListWidth
+    newListPos = parseInt($("#newList").css("left"))
+    clickX = e.pageX
+    newPositionWidth = newPosition.offsetWidth - newPoint.offsetWidth
+    newMovePos = newPositionWidth / newListX
     $(document).on("mousemove", function(e) {
-        newListMove = 0;
-        newListPos = parseInt($("#newList").css("left"))
-        $("#newList").css({left: e.pageX - $("#newList").data("clickX") + "px"})
-        if (newListPos > 0 || newListPos < newListX) {
-            if (newListPos > 0) $("#new_position a").css({left: 0})
-            else if (newListPos < newListX) $("#new_position a").css({left: newPositionWidth})
-        }
-        else $("#new_position a").css({left: newListPos * newMovePos})
-        if (newListPos > 100) {
+        e.preventDefault();
+        newListMove = 0
+        $("#newList").css({left: newListPos + (e.pageX - clickX)})
+        newListLeft = parseInt($("#newList").css("left"))
+        $("#new_position a").css({left: newListLeft * newMovePos})
+        if (newListLeft > 100) {
             $("#newList:not(:animated)").animate({left: 0})
+            $("#new_position a").css({left: 0})
         }
-        else if (newListPos < newListX - 100) {
+        else if (newListLeft < newListX - 100) {
             $("#newList:not(:animated)").animate({left: newListX})
+            $("#new_position a").css({left: newPositionWidth})
         }
     })
     $("#newList a").on("click", function() {
@@ -420,14 +426,25 @@ newPoint.addEventListener("mouseleave", function() {
 })
 newPosition.addEventListener("mousedown", function(e) {
     e.preventDefault();
-    let newPointLeft = parseInt($("#new_position a").css("left"))
-    $("#new_position a").data("clickX", e.pageX - newPointLeft)
+    newListWidth = parseInt($("#newList").width()) + parseInt($("#newList").css("padding-left"))*2
+    newListWrapWidth = parseInt($("#newListWrap").width())
+    newListX = newListWrapWidth - newListWidth
+    newPointPos = parseInt($("#new_position a").css("left"))
+    clickX = e.pageX
+    newPositionWidth = newPosition.offsetWidth - newPoint.offsetWidth
+    newMovePos = newListX / newPositionWidth
     $(document).on("mousemove", function(e) {
-        newListMove = 0;
-        newPointPos = parseInt($("#new_position a").css("left"))
-        newMovePos = newListX / newPositionWidth
-        $("#new_position a").css({left: e.pageX - $("#new_position a").data("clickX") + "px"})
-        $("#newList").css({left: newPointPos * newMovePos})
+        $("#new_position a").css({left: newPointPos + (e.pageX - clickX)})
+        newPointLeft = parseInt($("#new_position a").css("left"))
+        $("#newList").css({left: newPointLeft * newMovePos})
+        if (newPointLeft < 0) {
+            $("#new_position a").css({left: 0})
+            $("#newList").css({left: 0})
+        }
+        else if (newPointLeft > newPositionWidth) {
+            $("#new_position a").css({left: newPositionWidth})
+            $("#newList").css({left: newListX})
+        }
     })
 })
 // 새로 나왔어요, 지역별 지점 섹션 이상에서는 위치에 오면 사이드 바 안보이게 한다.
@@ -436,6 +453,7 @@ window.addEventListener("scroll", function(e) {
     let newY = $("#new").position().top - 500
     let categoryY = $("#categoryBest").position().top - 500
     let branchY = $("#branch").position().top - 500
+    if (window.innerWidth < 600) return false;
     if ((posY > newY && posY < categoryY) || posY > branchY) {
         $("#aside_product").stop().fadeOut(100)
     }
@@ -515,22 +533,14 @@ let n = 0;
 for (let i=0; i<count.length; i++) {
     countNum.push(count[i].innerText)
 }
-$("#map .count").text("0")
+// $("#map .count").text("0")
 function branchUp() { // 요소들 떠오르기
-    $("#branch").css({
-        backgroundImage: "url(" + $("#branch").attr("data-imgPath") + ")",
-        backgroundPosition: "center"
-    })
     $("#mapWrap > p").delay(100).animate({marginTop: 0, opacity: 1}, 500)
     $("#map").delay(200).animate({marginTop: 0, opacity: 1}, 500, function() {
         $("#map .count").css({backgroundPositionY: "bottom"})
     })
 }
 function branchDown() { // 요소들 내려가기
-    $("#branch").css({
-        backgroundImage: "none",
-        backgroundPositionY: "200px"
-    })
     $("#mapWrap > p").animate({marginTop: 100, opacity: 0}, 100)
     $("#map").animate({marginTop: 100, opacity: 0}, 100)
     $("#map .count").css({
@@ -555,22 +565,22 @@ window.addEventListener("scroll", function() {
         branchState = 0
         branchDown()
     }
-    if (posY > branchY && countState == 0) {
-        countState = 1;
-        $("#map .count").each(function() {
-            let indexN = $(this).parent().index()
-            branchCount(indexN)
+    // if (posY > branchY && countState == 0) {
+    //     countState = 1;
+    //     $("#map .count").each(function() {
+    //         let indexN = $(this).parent().index()
+    //         branchCount(indexN)
             
-        })
-    }
-    else if (posY < branchY) {
-        clearTimeout(branchTimer)
-        countState = 0;
-        n = 0;
-        $("#map .count").each(function() {
-            $(this).text("0")
-        })
-    }
+    //     })
+    // }
+    // else if (posY < branchY) {
+    //     clearTimeout(branchTimer)
+    //     countState = 0;
+    //     n = 0;
+    //     $("#map .count").each(function() {
+    //         $(this).text("0")
+    //     })
+    // }
 
 })
 
@@ -598,13 +608,31 @@ window.addEventListener("scroll", function() {
     }
 })
 
-/* 장바구니, 최근 본 상품 */
+/* 장바구니, 최근 본 상품, top, bottom 버튼 위치 */
+sideBarPos()
+window.addEventListener("resize", function() {
+    sideBarPos()
+})
 window.addEventListener("scroll", function() {
-    console.log(window.scrollY)
-    if (window.scrollY >= 500) {
+    sideBarPos()
+})
+function sideBarPos() {
+    // 장바구니, 최근 본 상품
+    if (window.innerWidth < 600) {
+        $("#aside_product").css({position: "fixed", top: "auto", bottom: 76})
+    }
+    else if (window.scrollY >= 500) {
         $("#aside_product").css({position: "fixed", top: 300})
     }
     else {
         $("#aside_product").css({position: "absolute", top: 800})
     }
-})
+
+    // top, bottom 버튼
+    if(window.scrollY > $("#footerWrap").position().top - 1000) {
+        $("#top_bottom").css({position: "absolute", top: $("#footerWrap").position().top - 75, bottom: "auto"})
+    }
+    else {
+        $("#top_bottom").css({position: "fixed", top: "auto", bottom: 10})
+    }
+}
