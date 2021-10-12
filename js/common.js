@@ -65,6 +65,14 @@ topWrap.addEventListener("mouseleave", function() {
         topWrap.style.backgroundColor = "rgba(255, 255, 255, 0.9)"
     }, 200)
 })
+
+// 아이디로 보내기
+$("#gnb li:first ul li a").on("click", function(e) {
+    e.preventDefault();
+    let target = $($(this).attr("href")).position().top - topWrap.offsetHeight
+    $("html, body:not(:animated)").animate({scrollTop: target})
+})
+
 // 아래로 휠 - 숨기기 / 위로 휠 - 나타나기
 window.addEventListener("wheel", function(e) {
     if (e.wheelDelta < 0) topWrap.className = "slideUp"
@@ -89,6 +97,10 @@ window.addEventListener("resize", function() {
 for(let i=0; i<mSlide.length; i++) {
     imgPath = mSlide[i].children[0].getAttribute("data-imgPath")
     mSlide[i].style.backgroundImage = "url(" + imgPath + ".jpg)"
+    if (i == 1 || i == 3 || i == 4 || i == 5) {
+        $("#main_sliderWrap li:eq(" + i + ") a p").css("color", "#9f9f9f")
+        $("#main_sliderWrap li:eq(" + i + ") a p em").css("color", "#000")
+    }
 }
 // 각 목록에 각 슬라이드의 제목 넣기
 for(let i=0; i<mSlideList.length; i++) {
@@ -140,6 +152,20 @@ $("#main_sliderList li").on("click", function(e) {
     }
 })
 
+// 윈도우 리사이즈 시 슬라이드 포지션 변경
+window.addEventListener("resize", function() {
+    if (window.innerWidth < 1500) {
+        $("#main_sliderWrap li").each(function() {
+            $(this).css({backgroundPositionX: -(2500 - window.innerWidth)})
+        })
+    }
+    else {
+        $("#main_sliderWrap li").each(function() {
+            $(this).css({backgroundPositionX: "center"})
+        })
+    }
+})
+
 /* 추천해요 */
 const rdd = document.querySelectorAll("#recommend dl dd")
 // 이미지 넣기
@@ -184,6 +210,11 @@ $("#recommend dl dd").hover(function() {
 /* 새로 나왔어요 */
 
 let newState = 0;
+
+// 이미지 설명 넣기
+$(".pList").each(function() {
+    $(this).find("img").attr("alt", $(this).find(".p_name p:first").text())
+})
 
 // 내려가면 올라오기
 function newUp() {
@@ -318,12 +349,13 @@ newPosition.addEventListener("mousedown", function(e) {
         $("#newList").css({left: newPointPos * newMovePos})
     })
 })
-// 새로 나왔어요 위치에 오면 사이드 바 안보이게 한다.
+// 새로 나왔어요, 지역별 지점 섹션 이상에서는 위치에 오면 사이드 바 안보이게 한다.
 window.addEventListener("scroll", function(e) {
     let posY = window.scrollY
     let newY = $("#new").position().top - 500
     let categoryY = $("#categoryBest").position().top - 500
-    if (posY > newY && posY < categoryY) {
+    let branchY = $("#branch").position().top - 500
+    if ((posY > newY && posY < categoryY) || posY > branchY) {
         $("#aside_product").stop().fadeOut(100)
     }
     else {
@@ -387,6 +419,78 @@ $(".pList a").on("click", function() {
         $("#as_recent_product ul").prepend(recentProduct)
         if (rcProductNum < 5) rcProductNum++
     }
+})
+
+/* 지역별 지점 */
+
+let branchState = 0;
+let branchTimer;
+
+// 도달 시 아이콘이 떠오르고난 후 숫자 카운트
+const count = document.querySelectorAll(".count")
+let countNum = []
+let countState = 0;
+let n = 0;
+for (let i=0; i<count.length; i++) {
+    countNum.push(count[i].innerText)
+}
+$("#map .count").text("0")
+function branchUp() { // 요소들 떠오르기
+    $("#branch").css({
+        backgroundImage: "url(" + $("#branch").attr("data-imgPath") + ")",
+        backgroundPosition: "center"
+    })
+    $("#mapWrap > p").delay(100).animate({marginTop: 0, opacity: 1}, 500)
+    $("#map").delay(200).animate({marginTop: 0, opacity: 1}, 500, function() {
+        $("#map .count").css({backgroundPositionY: "bottom"})
+    })
+}
+function branchDown() { // 요소들 내려가기
+    $("#branch").css({
+        backgroundImage: "none",
+        backgroundPositionY: "200px"
+    })
+    $("#mapWrap > p").animate({marginTop: 100, opacity: 0}, 100)
+    $("#map").animate({marginTop: 100, opacity: 0}, 100)
+    $("#map .count").css({
+        backgroundPositionY: 60
+    }, 100)
+}
+function branchCount(i) {
+    countState = 1;
+    count[i].innerText = n++;
+    if (n > countNum[i]) return false;
+    else branchTimer = setTimeout(branchCount(i), 20)
+}
+window.addEventListener("scroll", function() {
+    let posY = window.scrollY
+    let branchY = $("#branch").position().top - 500
+    let isPause = false;
+    if (posY > branchY && branchState == 0) {
+        branchState = 1
+        branchUp()
+    }
+    else if (posY < branchY && branchState == 1) {
+        branchState = 0
+        branchDown()
+    }
+    if (posY > branchY && countState == 0) {
+        countState = 1;
+        $("#map .count").each(function() {
+            let indexN = $(this).parent().index()
+            branchCount(indexN)
+            
+        })
+    }
+    else if (posY < branchY) {
+        clearTimeout(branchTimer)
+        countState = 0;
+        n = 0;
+        $("#map .count").each(function() {
+            $(this).text("0")
+        })
+    }
+
 })
 
 /* 거래처 회사 */
