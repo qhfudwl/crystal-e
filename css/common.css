@@ -109,6 +109,16 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 /* 메뉴 */
 #menu {}
+/* 메뉴 토글 버튼 */
+#toggleBtn {
+    display: block; background-color: rgba(255, 255, 255, 0); width: 25px; height: 20px;
+    border: 3px solid #000; border-right: 0; border-left: 0;
+    position: absolute; top: 15px; right: 15px;
+}
+#toggleBtn::after {
+    content: ""; position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+    width: 70%; height: 25%; border: 3px solid #000; border-right: 0; border-left: 0;
+}
 /* 주메뉴 */
 #gnb {
     width: 60%; margin: 0 auto;
@@ -117,7 +127,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #gnb > li {float: left;}
 #gnb > li > a {
     display: block; width: 100%; padding: 10px 0 20px;
-    text-align: center; font-size: 0.95em; font-weight: bold;
+    text-align: center; font-size: 1.1em; font-weight: bold;
     position: relative;
 }
 #gnb > li > a::after {
@@ -146,34 +156,32 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #gnb .two_depth_snb > li > a:hover {text-decoration: underline;}
 /* 슬라이더 */
 #main_slider {
-    margin-top: 130px; height: 700px; width: 100%; position: relative;
+    margin-top: 130px; height: 600px; width: 100%; position: relative;
 }
 /* 슬라이더 그림들 */
 #main_sliderWrap {}
 #main_sliderWrap li {
     width: 100%; height: 100%; position: absolute; top: 0; left: 0;
-    background: no-repeat right / cover;
+    background: no-repeat center / cover;
 }
 #main_sliderWrap li.on {z-index: 1;}
 #main_sliderWrap li a {
     display: block; width: 80%; height: 100%; margin: 0 auto;
-    padding: 50px 0 0 50px; box-sizing: border-box;
+    padding: 50px 0 0; box-sizing: border-box;
 }
 #main_sliderWrap li a p {
-    font-size: 2em; font-weight: bold;
+    font-size: 2em; font-weight: bold; line-height: 1.4em;
     display: table-cell; vertical-align: middle; height: 500px;
-    color: #fff; text-shadow: -5px 5px 10px rgba(0, 0, 0, 0.8);
+    color: #fff;
 }
 #main_sliderWrap li a p em {
-    font-size: 2.8em; line-height: 2em; margin-left: -50px;
+    font-size: 2.8em; line-height: 1.2em;
+    font-family: "SB어그로B", sans-serif; color: #ffff00;
 }
-#main_sliderWrap li a p em.serif {font-family: "마루부리B", serif; color: #ffc600;}
-#main_sliderWrap li a p span {text-transform: capitalize;}
 /* 슬라이더 목록 */
 #main_sliderList {
     z-index: 1;
     position: absolute; top: 50%; transform: translateY(-50%); right: 10vw;
-    /* box-shadow: 0 0 10px #595959; */
 }
 #main_sliderList ul {
     display: grid; row-gap: 2px;
@@ -194,12 +202,11 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     100% {transform: rotateZ(0deg);}
 }
 #main_sliderList ul li a {
-    display: table-cell; min-width: 6vw; padding: 20px 30px;
+    display: table-cell; min-width: 6vw; padding: 15px 20px;
     vertical-align: middle; transition-duration: 0.3s;
     font-size: 1.2em; font-family: "SB어그로B", sans-serif;
 }
 #main_sliderList ul li.on a {color: #f00;}
-#main_sliderList ul li a:hover {}
 /* 메인 */
 /* 각 섹션 공통 */
 #main > section {padding: 60px 0;}
@@ -335,48 +342,45 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #cbTapWrap .pList {background: #fff;}
 /* 지도 */
 #branch {
-    background: rgba(3, 175, 255, 0.199);
-    display: table-cell; width: 100vw; vertical-align: middle;
+    background: no-repeat center 200px / 500px; transition-duration: 0.4s;
+    width: 100vw; height: 80vh; position: relative;
 }
-#branch::after {content: ""; display: block; clear:both;}
-#mapWrap {width: 70%; margin: 0 auto;}
+#mapWrap {width: 80%; margin: 0 auto;}
 #mapWrap > p {
-    width: 50%; float: left; margin-left: 30px; padding-top: 80px;
-    font-size: 2.5vw; font-weight: bold; color: #fff; text-shadow: -3px 3px 10px #595959;
-    line-height: 1.5em;
-    /* border: 1px solid #000; */
+    line-height: 1.5em; color: #000; margin-top: 100px; opacity: 0;
+    font-size: 2.5vw; font-weight: bold; font-family: "SB어그로B", sans-serif;
+}
+#mapWrap > p > span {
+    position : absolute; bottom: 20%; right: 10%;
+    text-align: right;
 }
 #map {
-    float: right; width: 350px; height: 525px; position: relative;
-    background: url(../svg/map.svg) no-repeat center / cover;
-    vertical-align: middle;
+    width: 350px; height: 525px; opacity: 0; margin-top: 100px;
 }
-#map ul {position: relative;}
+#map ul {}
 #map .point {
     position: absolute;
     font-weight: bold; color: #c91c1c;
     /* border: 1px solid #000; */ font-family: "SB어그로B", sans-serif;
 }
-#map .seoul {top: 35px; left: 100px;}
-#map .incheon {top: 65px; left: 75px;}
-#map .daejeon {top: 160px; left: 135px;}
-#map .gwangju {top: 285px; left: 80px;}
-#map .daegu {top: 225px; left: 230px;}
-#map .jeju {top: 415px; left: 60px;}
-#map .busan {top: 280px; left: 270px;}
-#map .gangwon {top: 30px; left: 240px;}
+#map .seoul {top: 130px; left: 855px;}
+#map .incheon {top: 160px; left: 825px;}
+#map .daejeon {top: 310px; left: 905px;}
+#map .gwangju {top: 480px; left: 835px;}
+#map .daegu {top: 395px; left: 1045px;}
+#map .busan {top: 485px; left: 1105px;}
+#map .gangwon {top: 125px; left: 1015px;}
+#map .jeju {top: 685px; left: 795px;}
 #map .count {
-    height: 55px; text-align: center;
-    -webkit-text-stroke: 0.2px #fff;
-    background: url(../svg/crystal-e_mapPoint.svg) no-repeat bottom / 20px;
+    height: 55px; text-align: center; transition-duration: 0.3s;
+    background: url(../svg/crystal-e_mapPoint.svg) no-repeat center 60px / 20px;
 }
 #map .count span {display: block;}
 #map .point p:first-child {
-    color: #000; font-size: 0.8em; font-weight: bold; text-align: center;
-    -webkit-text-stroke: 0.2px #fff;
+    color: #000; font-size: 0.9em; font-weight: bold; text-align: center;
 }
 /* 상품 거래처 회사 */
-#client {}
+#client {border-top: 1px solid #efefef;}
 #main #client h2 {
     margin-bottom: 30px;
 }
@@ -391,8 +395,14 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     float: left; width: 20%; text-align: center;
 }
 #clientList li a {
-    line-height: 2.5;
+    line-height: 2.5; position: relative;
 }
+#clientList li a::after {
+    content: ""; position: absolute; top: 50%; left: 50%;
+    width: 0; height: 2px; background-color: #c91c1c;
+    transition-duration: 0.3s;
+}
+#clientList li a:hover::after {left: -10%; width: 120%;}
 /* 장바구니, 최근 본 상품 */
 #aside_product {
     position: fixed; top: 300px; right: 10px; z-index: 1000;
@@ -476,4 +486,69 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     font-family: "SB어그로B", sans-serif; color: #c91c1c; font-size: 1.3em;
     position: absolute; z-index: 10000; transform: translate(40%, -70%);
     transition: font-size 0.1s linear; pointer-events: none;
+}
+
+/* 반응형 */
+@media all and (max-width: 1200px) {
+    #recommend dl {
+        grid-template-columns: auto auto;
+   }
+}
+@media all and (max-width: 800px) {
+    /* 헤더 꾸미기 */
+    #header {display: block;}
+    #header h1 {margin-bottom: 15px; width: 170px; height: 21px;}
+    #header h1 a {background-size: 170px;}
+    #search {width: 80%; margin: 0 auto; position: relative;}
+    #check {position: absolute; top: 50%; right: 5px; transform: translateY(-50%);}
+    #option {position: absolute; top: 15px; right: 35px;}
+    /* 메뉴 꾸미기 */
+    #menu {
+        position: fixed; top: 0; right: 0; background: #fff;
+        height: 100vh;
+    }
+    #gnb {width: 75vw; flex-direction: column; margin-top: 90px;}
+    #gnb > li {float: none; border-bottom: 1px solid #c7c7c7; width: 100%;}
+    #gnb > li > a {
+        text-indent: 20px; text-align: left; padding: 20px 0;
+    }
+    #gnb > li > a::after {
+        width: 30px; height: 30px; left: auto; right: 10px; top: 50%; transform: translateY(-50%);
+        background: url(../images/crystal-e_arrow_off.png) no-repeat 100% / 120px;
+    }
+    #gnb > li > a:hover::after {
+        width: 30px; left: auto;
+        background-image: url(../images/crystal-e_arrow_on.png);
+    }
+    #gnb > li > a.active::after {
+        width: 30px; left: auto;
+        background-image: url(../images/crystal-e_arrow_on.png);
+    }
+    #gnb .one_depth_snb {
+        position: static; padding: 0; box-shadow: none;
+        background: #e7e7e7;
+    }
+    #gnb .one_depth_snb > li {float: none; width: 100%;}
+    #gnb .one_depth_snb > li > a {
+        padding: 20px 0; text-indent: 30px; border-top: 1px solid #c7c7c7;
+        position: relative;
+    }
+    #gnb .one_depth_snb > li > a::after {
+        content: ""; position: absolute;
+        width: 30px; height: 30px; right: 10px; top: 50%; transform: translateY(-50%);
+        background: url(../images/crystal-e_arrow_off.png) no-repeat 100% / 120px;
+    }
+    #gnb .one_depth_snb > li > a:hover {text-decoration: none;}
+    #gnb .one_depth_snb > li > a:hover::after {
+        background-image: url(../images/crystal-e_arrow_on.png);
+    }
+    #gnb .one_depth_snb > li > a.active::after {
+        background-image: url(../images/crystal-e_arrow_on.png);
+    }
+    #gnb .two_depth_snb {display: none;}
+    #gnb .two_depth_snb li a {text-indent: 30px; padding: 10px 0;}
+    /* 추천해요 */
+    #recommend dl {
+        grid-template-columns: auto;
+   }
 }
