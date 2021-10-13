@@ -45,16 +45,63 @@ fontBtn[0].addEventListener("click", function(e) {
     e.preventDefault();
     if (body.style.fontSize == "0.7em") return false;
     body.style.fontSize = parseFloat(body.style.fontSize) - 0.05 +  "em";
+    menuLine()
 })
 // 글자 크게
 fontBtn[1].addEventListener("click", function(e) {
     e.preventDefault();
     if (body.style.fontSize == "1.7em") return false;
     body.style.fontSize = parseFloat(body.style.fontSize) + 0.05 +  "em";
-    console.log(body.style.fontSize)
+    menuLine()
 })
 
 /* 메뉴 */
+
+// 1 / 3번 메뉴 화면 크기가 작아지거나 글자가 커지면 줄바꿈하자
+menuLine()
+window.addEventListener("resize", menuLine)
+function menuLine() {
+    if (window.innerWidth < 900) {
+        $("#menuBig .gnb .one_depth_snb > li").css({width: "16%"})
+        $("#menuBig .gnb .one_depth_snb > li").css({clear: "none"})
+        $("#menuBig .gnb .one_depth_snb:eq(0) > li").css({width: "20%"})
+        $("#menuBig .gnb .one_depth_snb:eq(2) > li").css({width: "20%"})
+        $("#menuBig .gnb .one_depth_snb:eq(0) > li:last").css({clear: "both"})
+        $("#menuBig .gnb .one_depth_snb:eq(2) > li:last").css({clear: "both"})
+    }
+    else {
+        if (window.innerWidth > 1500) {
+            $("#menuBig .gnb .one_depth_snb > li").css({width: "16%"})
+            $("#menuBig .gnb .one_depth_snb > li").css({clear: "none"})
+        }
+        else if (window.innerWidth > 1200 && parseFloat(body.style.fontSize) == 1.7) {
+            $("#menuBig .gnb .one_depth_snb > li").css({width: "16%"})
+            $("#menuBig .gnb .one_depth_snb > li").css({clear: "none"})
+            $("#menuBig .gnb .one_depth_snb:eq(0) > li").css({width: "30%"})
+            $("#menuBig .gnb .one_depth_snb:eq(2) > li").css({width: "30%"})
+            $("#menuBig .gnb .one_depth_snb:eq(0) > li:eq(3)").css({clear: "both"})
+            $("#menuBig .gnb .one_depth_snb:eq(2) > li:eq(3)").css({clear: "both"})
+        }
+        else if (parseFloat(body.style.fontSize) == 1.7) {
+            $("#menuBig .gnb .one_depth_snb > li").css({width: "16%"})
+            $("#menuBig .gnb .one_depth_snb > li").css({clear: "none"})
+            $("#menuBig .gnb .one_depth_snb > li").css({width: "30%"})
+            $("#menuBig .gnb .one_depth_snb > li:eq(3)").css({clear: "both"})
+        }
+        else if (parseFloat(body.style.fontSize) > 1.2) {
+            $("#menuBig .gnb .one_depth_snb > li").css({width: "16%"})
+            $("#menuBig .gnb .one_depth_snb > li").css({clear: "none"})
+            $("#menuBig .gnb .one_depth_snb:eq(0) > li").css({width: "25%"})
+            $("#menuBig .gnb .one_depth_snb:eq(2) > li").css({width: "25%"})
+            $("#menuBig .gnb .one_depth_snb:eq(0) > li:eq(4)").css({clear: "both"})
+            $("#menuBig .gnb .one_depth_snb:eq(2) > li:eq(4)").css({clear: "both"})
+        }
+        else {
+            $("#menuBig .gnb .one_depth_snb > li").css({width: "16%"})
+            $("#menuBig .gnb .one_depth_snb > li").css({clear: "none"})
+        }
+    }
+}
 
 // 보조 메뉴 보이게
 const topWrap = document.getElementById("topWrap")
@@ -65,7 +112,6 @@ function menuBig() {
         topWrap.style.backgroundColor = "#fff";
         $(this).children("a").addClass("active")
         $(this).children("#menuBig .one_depth_snb").stop().slideDown(200)
-
     })
     $("#menuBig .gnb > li").on("mouseleave", function(e) {
         e.preventDefault();
@@ -581,9 +627,11 @@ window.addEventListener("scroll", function() {
     if (posY > branchY && branchState == 0) {
         branchState = 1
         branchUp()
-        for(let i=0; i<count.length; i++) {
-            branchCount(i)
-        }
+        setTimeout(function() {
+            for(let i=0; i<count.length; i++) {
+                branchCount(i)
+            }
+        }, 1000)
     }
     else if (posY < branchY && branchState == 1) {
         branchState = 0
