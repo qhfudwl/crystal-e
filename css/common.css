@@ -646,26 +646,43 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #as_basket a {background-size: 25px; width: 30px; height: 30px;}
     /* 최근 본 상품 */
     #as_recent_product {
-        width: 30px; height: 30px; overflow: hidden; padding: 0;
+        width: 30px; height: 30px; padding: 0;
         background: #fff url(../svg/recent_product.svg) no-repeat center / 30px;
-        box-sizing: content-box;
+        box-sizing: content-box; position: relative;
     }
-    #as_recent_product p {display: none;}
-    #as_recent_product ul {display: none;}
+    #as_recent_product p {
+        position: absolute; top: -380px; left: -90px;
+        width: 82px; z-index: 1; 
+        display: none;
+    }
+    #as_recent_product ul {
+        position: absolute; top: -390px; left: -90px;
+        padding-top: 30px; background-color: #fff;
+        width: 82px; height: 375px; border-radius: 10px;
+        border: 1px solid #828282; 
+        display: none;
+    }
     /* footer */
     #link {bottom: 30px;}
 }
 @media all and (max-width: 500px) {
+    /* 로고 */
     #header h1 {width: 120px;}
     #header h1 a {background-size: 120px;}
+    /* 작을 때 메뉴 */
     #menuSmall .gnb > li > a {padding: 10px 0; font-size: 0.9em;}
     #menuSmall .gnb .one_depth_snb > li > a {padding: 10px 0; font-size: 0.9em;}
+    /* 섹션 별 제목 */
     #main > section h2 {font-size: 40px; font-family: "SB어그로M", sans-serif;}
+    /* 슬라이더 */
     #main_sliderWrap li a p em {font-size: 50px;}
+    /* 추천해요 */
     #recommend dl dd a p {font-size: 40px; -webkit-text-stroke-width: 1.5px;}
+    /* 새로 나왔어요 */
     #new_move {display: none;}
+    /* 카테고리별 베스트 */
     #cbTapWrap h3 a {font-size: 0.8em;}
-    /* #mapWrap > p span {font-size: 5vw; font-family: "SB어그로M", sans-serif;} */
+    /* 지역별 지점 수 */
     #map {background-size: 300px; width: 300px;}
     #map .seoul {top: 120px; left: 85px;}
     #map .incheon {top: 150px; left:60px;}
