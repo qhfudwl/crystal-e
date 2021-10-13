@@ -685,7 +685,7 @@ function sideBarPos() {
         }
     }
     else if (window.scrollY >= 500) {
-        $("#aside_product").css({position: "fixed", top: 300})
+        $("#aside_product").css({position: "fixed", top: 150})
     }
     else {
         $("#aside_product").css({position: "absolute", top: 800})
@@ -699,3 +699,9 @@ function sideBarPos() {
         $("#top_bottom").css({position: "fixed", top: "auto", bottom: 10})
     }
 }
+$("#as_recent_product").on("click", function() {
+    if (window.innerWidth < 600) {
+        $("p", this).toggle()
+        $("ul", this).toggle()
+    }
+})
