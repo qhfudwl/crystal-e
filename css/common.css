@@ -70,7 +70,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 #search label {}
 #s_write {
-    width: 23vw; font-size: 1em; padding: 5px 0;
+    width: 35vw; font-size: 1em; padding: 5px 0;
     border: 0; outline: none; background-color: rgba(0, 0, 0, 0);
 }
 #check {
@@ -86,37 +86,37 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #option ul li {float: left;}
 #text_size {display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;}
 #text_size a {
-    display: block; width: 30px; height: 30px; margin: 0 10px;
-    background: url(../images/crystal-e_arrow_off.png) no-repeat top / 120px;
+    display: block; width: 30px; height: 30px;
+    background: url(../images/crystal-e_arrow_off.png) no-repeat center / 120px;
 }
-#text_size a.down {background-position-x: 0%;}
-#text_size a.up {background-position-x: 33%;}
+#text_size a.down {background-position-x: 0;}
+#text_size a.up {background-position-x: -30px;}
 #text_size a:hover {background-image: url(../images/crystal-e_arrow_on.png);}
-#option #text_size p {line-height: 1.875em; font-size: 1em;}
+#option #text_size p {font-size: 1em;}
 /* 장바구니 */
 #basket {
     position: relative; margin-right: 30px;
 }
 #basket a {
-    display: block; width: 1.875em; height: 1.875em;
+    display: block; width: 30px; height: 30px;
     background: url(../images/cart.png) no-repeat center / cover;
 }
 #basket a:hover {background-image: url(../images/cart_on.png);}
 #basket p {
     position: absolute; top: -10px; right: -10px; text-align: center;
-    line-height: 1.25em; width: 1.25em; height: 1.25em;
+    line-height: 22px; width: 22px; height: 22px;
     background-color: #c91c1c; color: #fff;
-    border-radius: 50%; font-size: 0.9em;
+    border-radius: 50%; font-size: 16px;
 }
 /* 메뉴 */
 /* 주메뉴 - menuBig */
 #menuBig .gnb {
-    width: 60%; margin: 0 auto;
-    display: flex; flex-flow: row nowrap; justify-content: space-between;
+    width: 90%; margin: 0 auto;
+    display: flex; flex-flow: row wrap; justify-content: space-between;
 }
 #menuBig .gnb > li {float: left;}
 #menuBig .gnb > li > a {
-    display: block; width: 100%; padding: 10px 0 20px;
+    display: block; width: 100%; padding: 20px 0;
     text-align: center; font-size: 1.1em; font-weight: bold;
     position: relative;
 }
@@ -129,12 +129,12 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 /* 보조 메뉴 - 1 */
 #menuBig .gnb .one_depth_snb {
     position: absolute; left: 0; width: 100%; box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px 10%; background: #fff;
+    background: #fff; padding: 10px 30px;
     display: none;
 }
-#menuBig .gnb .one_depth_snb > li {float: left; width: 14%;}
+#menuBig .gnb .one_depth_snb > li {float: left; width: 16%;}
 #menuBig .gnb .one_depth_snb > li > a {
-    display: block; padding: 10px 0 0; font-weight: bold; font-size: 1em;
+    display: block; padding: 10px 0; font-weight: bold; font-size: 1em;
 }
 #menuBig .gnb .one_depth_snb > li > a:hover {text-decoration: underline;}
 /* 보조 메뉴 - 2 */
@@ -220,12 +220,12 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     padding: 50px 0 0; box-sizing: border-box;
 }
 #main_sliderWrap li a p {
-    font-size: 2em; font-weight: bold; line-height: 1.4em; padding-left: 6vw;
+    font-size: 40px; font-weight: bold; line-height: 1.4em; padding-left: 6vw;
     display: table-cell; vertical-align: middle; height: 500px;
     color: #fff;
 }
 #main_sliderWrap li a p em {
-    font-size: 2.8em; line-height: 1.2em;
+    font-size: 80px; line-height: 1.2em;
     font-family: "위메프B", sans-serif; color: #ffff00;
 }
 /* 슬라이더 목록 */
@@ -254,7 +254,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #main_sliderList ul li a {
     display: table-cell; min-width: 6vw; padding: 15px 20px;
     vertical-align: middle; transition-duration: 0.3s;
-    font-size: 1.2em; font-family: "SB어그로B", sans-serif;
+    font-size: 20px; font-family: "SB어그로B", sans-serif;
 }
 #main_sliderList ul li.on a {color: #f00;}
 /* 메인 */
@@ -279,13 +279,13 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #recommend dl dd:hover {box-shadow: 0 0 10px #4d4d4d; transform: scale(1.1); z-index: 1;}
 #recommend dl dd a {
     display: block; height: 300px; box-sizing: border-box;
-    padding: 20px 0 0 20px; transition-duration: 0.3s;
+    padding: 20px 0 0 10px; transition-duration: 0.3s;
 }
 #recommend dl dd a:hover {}
 #recommend dl dd a p {
     color: #fff; font-family: "SB어그로B", sans-serif;
     -webkit-text-stroke: 2px #000;
-    font-size: 2.5em;
+    font-size: 40px;
 }
 /* 새로 나왔어요 */
 #new {}
@@ -392,21 +392,21 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #cbTapWrap .pList {background: #fff;}
 /* 지도 */
 #main #branch {
-    transition-duration: 0.4s; padding: 0; min-height: 660px;
+    transition-duration: 0.4s; padding: 0; min-height: 700px;
     width: 100%; height: 80vh; position: relative;
 }
 #main #branch h2 {margin: 0;}
-#mapWrap {width: 80%; margin: 0 auto;}
+#mapWrap {width: 90%; margin: 0 auto;}
 #mapWrap > p span {
     position: absolute; font-size: 2.5vw; font-weight: bold; font-family: "SB어그로B", sans-serif;
     line-height: 1.5em; color: #000; z-index: 10; transition-duration: 0.3s;
     /* margin-top: 100px; opacity: 0; */
 }
 #mapWrap > p span:first-child {
-    top: 20%; left: 10%;
+    top: 5%; left: 5%;
 }
 #mapWrap > p span:last-child {
-    bottom: 20%; right: 10%;
+    bottom: 5%; right: 5%;
     text-align: right;
 }
 #map {
@@ -416,9 +416,8 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 #map ul {}
 #map .point {
-    position: absolute;
-    font-weight: bold; color: #c91c1c;
-    /* border: 1px solid #000; */ font-family: "SB어그로B", sans-serif;
+    font-size: 16px;
+    position: absolute; color: #c91c1c; font-family: "SB어그로B", sans-serif;
 }
 #map .seoul {top: 75px; left: 165px;}
 #map .incheon {top: 120px; left: 140px;}
@@ -434,7 +433,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 #map .count span {display: block;}
 #map .point p:first-child {
-    color: #000; font-size: 0.9em; text-align: center;
+    color: #000; text-align: center;
     font-family: "SB어그로M", sans-serif;
 }
 /* 상품 거래처 회사 */
@@ -443,24 +442,23 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     margin-bottom: 30px;
 }
 #clientList {
-    width: 80%; margin: 0 auto; padding: 30px;
+    width: 90%; margin: 0 auto; padding: 15px;
     position: relative; top: 100px; opacity: 0;
     border-top: 2px solid #000;
     border-bottom: 1px solid #afafaf;
+    display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;
 }
-#clientList::after {content: ""; display: block; clear: both;}
 #clientList li {
-    float: left; width: 20%; text-align: center; transition-duration: 0.3s;
+    float: left; width: 20%; text-align: center; transition-duration: 0.3s; padding: 20px 0;
+    vertical-align: middle;
 }
-#clientList li a {
-    line-height: 2.5; position: relative;
-}
+#clientList li a {position: relative;}
 #clientList li a::after {
-    content: ""; position: absolute; top: 50%; left: 50%;
+    content: ""; position: absolute; bottom: 0; left: 50%;
     width: 0; height: 2px; background-color: #c91c1c;
     transition-duration: 0.3s;
 }
-#clientList li a:hover::after {left: -10%; width: 120%;}
+#clientList li a:hover::after {left: -5%; width: 110%;}
 /* 장바구니, 최근 본 상품 */
 #aside_product {
     position: absolute; top: 800px; right: 10px; z-index: 1000;
@@ -477,9 +475,9 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 #as_basket a:hover {background-image: url(../images/cart_on.png);}
 #as_basket p {
-    position: absolute; top: 5px; right: 12px;
-    line-height: 1.4em; width: 1.4em; height: 1.4em; text-align: center;
-    border-radius: 50%; font-size: 1em;
+    position: absolute; top: -15px; right: -10px;
+    line-height: 25px; width: 25px; height: 25px; text-align: center;
+    border-radius: 50%; font-size: 18px;
     background-color: #c91c1c; color: #fff;
 }
 /* 최근 본 상품 */
@@ -514,19 +512,19 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 #footer {
     width: 90%; margin: 0 auto; overflow: hidden; position: relative;
-    text-transform: uppercase; font-size: 0.9em;
+    text-transform: uppercase; font-size: 16px;
 }
 #info {}
 #info p {margin-bottom: 30px;}
-#info small {font-size: 0.8em; color: #808080;}
+#info small {font-size: 14px; color: #808080;}
 #info small span {text-transform: lowercase;}
 #customer_call {
-    position: absolute; top: 50%; left: 60%; transform: translateX(-50%) translateY(-50%);
+    position: absolute; top: 50%; left: 50%; transform: translateY(-50%);
 }
-#customer_call p:first-child {font-size: 1.5em;}
-#customer_call p:first-child span {font-size: 0.6em;}
+#customer_call p:first-child {font-size: 25px;}
+#customer_call p:first-child span {font-size: 16px;}
 #customer_call p:last-child {
-    font-size: 2.5em; padding-left: 60px; width: 400px;
+    font-size: 45px; padding-left: 60px; width: 50vw;
     background: url(../svg/headset.svg) no-repeat left / 50px;
 }
 #link {position: absolute; bottom: 0; right: 0; transition-duration: 0.3s;}
@@ -541,24 +539,24 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #link a.naver:hover {background-image: url(../svg/crystal-e_link_on.svg);}
 /* 마우스 모양 */
 #cursor {
-    font-family: "SB어그로B", sans-serif; color: #c91c1c; font-size: 1.3em;
+    font-family: "SB어그로B", sans-serif; color: #c91c1c; font-size: 20px;
     position: absolute; z-index: 10000; transform: translate(40%, -70%);
     transition: font-size 0.1s linear; pointer-events: none;
 }
 
 /* 반응형 */
 @media all and (max-width: 1200px) {
+    #header h1 {margin-bottom: 15px; width: 170px; height: 21px;}
+    #header h1 a {background-size: 170px;}
     /* 슬라이더 */
-    #main_sliderWrap li a p {font-size: 1.5em; display: block; padding-left: 0;}
-    #main_sliderWrap li a p em {font-size: 2em; -webkit-text-stroke: 1px solid #000;}
+    #main_sliderWrap li a p {font-size: 35px; display: block; padding-left: 0;}
+    #main_sliderWrap li a p em {font-size: 70px; -webkit-text-stroke: 1px solid #000;}
     /* 추천해요 */
     #recommend dl {grid-template-columns: auto auto;}
     /* 카테고리 베스트 */
     #cbTapWrap ul {grid-template-columns: auto auto;}
     /* 지역별 지점 */
-    #mapWrap > p span {font-size: 1.8em;}
-    #mapWrap > p span:first-child {top: 10%; left: 5%;}
-    #mapWrap > p span:last-child {bottom: 10%; right: 5%;}
+    #mapWrap > p span {font-size: 3.5vw;}
     #map {background-size: 300px; width: 400px;}
     #map .seoul {top: 120px; left: 135px;}
     #map .incheon {top: 150px; left:110px;}
@@ -580,8 +578,6 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 @media all and (max-width: 800px) {
     /* 헤더 꾸미기 */
     #header {display: block;}
-    #header h1 {margin-bottom: 15px; width: 170px; height: 21px;}
-    #header h1 a {background-size: 170px;}
     #search {width: 80%; margin: 0 auto; position: relative;}
     #check {position: absolute; top: 50%; right: 5px; transform: translateY(-50%);}
     #option {position: absolute; top: 15px; right: 35px;}
@@ -605,8 +601,8 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     }
     #main_sliderList ul li.on {animation: upDown 0.5s forwards 1; border: 5px solid rgba(0, 0, 0, 0.2);}
     #main_sliderList ul li a {
-        font-size: 1em; padding: 10px; font-family: "SB어그로M", sans-serif;
-        position: absolute; top: -70px; left: 0; transform: translateX(-39%); width: 120px;
+        font-size: 16px; padding: 10px; font-family: "SB어그로M", sans-serif;
+        position: absolute; top: -70px; left: 0; transform: translateX(-45%); width: 120px;
         background: #fff; border-radius: 10px; display: none;
     }
     #main_sliderList ul li:hover a {display: block; box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);}
@@ -620,15 +616,21 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
    /* 카테고리베스트 */
    #cbTapWrap h3 a {background-size: 10vw; padding-top: 12vw;}
    #cbTapWrap {width: 90%;}
-   #cbTapWrap ul {width: 100%; margin-top: 50px;}
+   #cbTapWrap ul {width: 100%; margin-top: 60px;}
    /* 지역별 지점 */
+   #mapWrap > p span {font-size: 4vw;}
    #mapWrap > p span:first-child {top: 3%; left: 5%;}
    #mapWrap > p span:last-child {bottom: 3%; right: 5%;}
    /* 거래처 회사들 */
    #clientList li {width: 33.3333%; font-size: 0.9em;}
+   /* footer */
+   #customer_call p:last-child {font-size: 35px; width: 100%;}
 }
 @media all and (max-width: 600px) {
     #cbTapWrap ul {grid-template-columns: auto;}
+    #main_sliderWrap li a p em {font-size: 50px;}
+    #main_sliderWrap li a p {font-size: 25px;}
+    #mapWrap > p span {font-size: 5vw; font-family: "SB어그로M", sans-serif;}
     /* 거래처 회사들 */
     #clientList li {width: 50%;}
     /* 사이드메뉴 */
@@ -636,7 +638,6 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     /* 장바구니 */
     #as_basket {width: 30px;}
     #as_basket a {background-size: 25px; width: 30px; height: 30px;}
-    #as_basket p {top: -10px; right: -5px; font-size: 0.8em;}
     /* 최근 본 상품 */
     #as_recent_product {
         width: 30px; height: 30px; overflow: hidden; padding: 0;
@@ -655,11 +656,11 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #menuSmall .gnb > li > a {padding: 10px 0; font-size: 0.9em;}
     #menuSmall .gnb .one_depth_snb > li > a {padding: 10px 0; font-size: 0.9em;}
     #main > section h2 {font-size: 40px; font-family: "SB어그로M", sans-serif;}
-    #main_sliderWrap li a p em {font-size: 1.8em;}
-    #recommend dl dd a p {font-size: 2em; -webkit-text-stroke-width: 1.5px;}
+    #main_sliderWrap li a p em {font-size: 50px;}
+    #recommend dl dd a p {font-size: 40px; -webkit-text-stroke-width: 1.5px;}
     #new_move {display: none;}
     #cbTapWrap h3 a {font-size: 0.8em;}
-    #mapWrap > p span {font-size: 1.3em; font-family: "SB어그로M", sans-serif;}
+    /* #mapWrap > p span {font-size: 5vw; font-family: "SB어그로M", sans-serif;} */
     #map {background-size: 300px; width: 300px;}
     #map .seoul {top: 120px; left: 85px;}
     #map .incheon {top: 150px; left:60px;}
@@ -669,6 +670,8 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #map .busan {top: 325px; left: 235px;}
     #map .gangwon {top: 115px; left: 195px;}
     #map .jeju {top: 445px; left: 50px;}
+    /* footer */
+    #customer_call p:last-child {font-size: 30px;}
     #footerWrap {background-size: 300px; background-position: 20px 270px;}
-    #customer_call p:last-child {font-size: 2em; background-size: 40px; padding-left: 50px;}
+    #customer_call p:last-child {font-size: 35px; background-size: 40px; padding-left: 50px;}
 }
