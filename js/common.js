@@ -619,7 +619,12 @@ window.addEventListener("scroll", function() {
 function sideBarPos() {
     // 장바구니, 최근 본 상품
     if (window.innerWidth < 600) {
-        $("#aside_product").css({position: "fixed", top: "auto", bottom: 76})
+        if (window.scrollY > $("#footerWrap").position().top - 1000) {
+            $("#aside_product").css({position: "absolute", top: $("#footerWrap").position().top - 141})
+        }
+        else {
+            $("#aside_product").css({position: "fixed", top: "auto", bottom: 76})
+        }
     }
     else if (window.scrollY >= 500) {
         $("#aside_product").css({position: "fixed", top: 300})
