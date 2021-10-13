@@ -581,7 +581,7 @@ $(".pList a").on("click", function() {
 /* 지역별 지점 */
 
 let branchState = 0;
-let branchTimer;
+let branchTimer, branchTimer2;
 
 // 위치 잡기
 let mapWrapHeight = parseInt($("#mapWrap").height()) * 0.55
@@ -594,7 +594,7 @@ window.addEventListener("resize", function() {
 // 도달 시 아이콘이 떠오르고난 후 숫자 카운트
 const count = document.querySelectorAll(".count")
 let countNum = [] // 처음 값들 넣어놓기
-let countState = 0;
+let countState = 0; // 0:동작 가능 1: 동작 불가
 let bn = [0, 0, 0, 0, 0, 0, 0, 0];
 for (let i=0; i<count.length; i++) {
     countNum.push(count[i].innerText)
@@ -615,7 +615,7 @@ function branchDown() { // 요소들 내려가기
 }
 function branchCount(classNum) {
     count[classNum].innerText = ++bn[classNum];
-    if (count[classNum].innerText == countNum[classNum]) return false;
+    if (bn[classNum] >= countNum[classNum]) return false;
     branchTimer = setTimeout(function() {
         branchCount(classNum)
     }, 10)
@@ -627,18 +627,22 @@ window.addEventListener("scroll", function() {
     if (posY > branchY && branchState == 0) {
         branchState = 1
         branchUp()
-        setTimeout(function() {
+        branchTimer2 = setTimeout(function() {
             for(let i=0; i<count.length; i++) {
                 branchCount(i)
             }
         }, 1000)
     }
     else if (posY < branchY && branchState == 1) {
+        console.log(bn)
         branchState = 0
         branchDown()
         clearTimeout(branchTimer)
+        clearTimeout(branchTimer2)
         bn = [0, 0, 0, 0, 0, 0, 0, 0];
-        $("#map .count").text("0")
+        for(let i=0; i<count.length; i++) {
+            count[i].innerText = 0
+        }
     }
 })
 
