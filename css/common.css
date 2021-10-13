@@ -410,7 +410,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     text-align: right;
 }
 #map {
-    width: 500px; height: 80vh; position: relative; margin: 0 auto; transition-duration: 0.3s;
+    width: 500px; height: 660px; position: relative; margin: 0 auto; transition-duration: 0.3s;
     /* opacity: 0; margin-top: 100px; */
     background: url(../svg/map.svg) no-repeat center / 400px;
 }
@@ -420,14 +420,14 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     font-weight: bold; color: #c91c1c;
     /* border: 1px solid #000; */ font-family: "SB어그로B", sans-serif;
 }
-#map .seoul {top: 115px; left: 165px;}
-#map .incheon {top: 160px; left: 140px;}
-#map .daejeon {top: 260px; left: 205px;}
-#map .gwangju {top: 395px; left: 145px;}
-#map .daegu {top: 325px; left: 315px;}
-#map .busan {top: 395px; left: 365px;}
-#map .gangwon {top: 125px; left: 305px;}
-#map .jeju {top: 555px; left: 120px;}
+#map .seoul {top: 75px; left: 165px;}
+#map .incheon {top: 120px; left: 140px;}
+#map .daejeon {top: 220px; left: 205px;}
+#map .gwangju {top: 355px; left: 145px;}
+#map .daegu {top: 285px; left: 315px;}
+#map .busan {top: 355px; left: 365px;}
+#map .gangwon {top: 85px; left: 305px;}
+#map .jeju {top: 515px; left: 120px;}
 #map .count {
     height: 55px; text-align: center; transition-duration: 0.3s;
     background: url(../svg/crystal-e_mapPoint.svg) no-repeat center 60px / 20px;
@@ -558,15 +558,15 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #mapWrap > p span {font-size: 1.8em;}
     #mapWrap > p span:first-child {top: 10%; left: 5%;}
     #mapWrap > p span:last-child {bottom: 10%; right: 5%;}
-    #map {background-size: 300px;}
-    #map .seoul {top: 165px; left: 185px;}
-    #map .incheon {top: 190px; left: 160px;}
-    #map .daejeon {top: 270px; left: 215px;}
-    #map .gwangju {top: 375px; left: 165px;}
-    #map .daegu {top: 315px; left: 295px;}
-    #map .busan {top: 365px; left: 335px;}
-    #map .gangwon {top: 155px; left: 295px;}
-    #map .jeju {top: 495px; left: 150px;}
+    #map {background-size: 300px; width: 400px;}
+    #map .seoul {top: 120px; left: 135px;}
+    #map .incheon {top: 150px; left:110px;}
+    #map .daejeon {top: 230px; left: 165px;}
+    #map .gwangju {top: 335px; left: 115px;}
+    #map .daegu {top: 275px; left: 245px;}
+    #map .busan {top: 325px; left: 285px;}
+    #map .gangwon {top: 115px; left: 245px;}
+    #map .jeju {top: 445px; left: 100px;}
     /* 거래처 회사들 */
     #clientList li {width: 25%;}
     /* footer */
@@ -645,5 +645,6 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #as_recent_product p {display: none;}
     #as_recent_product ul {display: none;}
     /* footer */
+    #footerWrap {background-size: 400px; background-position: 20px 270px;}
     #link {bottom: 30px;}
 }
