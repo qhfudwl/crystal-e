@@ -411,7 +411,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 #map {
     width: 500px; height: 660px; position: relative; margin: 0 auto; transition-duration: 0.3s;
-    top: 40vh; transform: translateY(-50%);
+    transform: translateY(-50%);
     background: url(../svg/map.svg) no-repeat center / 400px;
 }
 #map ul {}
