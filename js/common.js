@@ -1,3 +1,5 @@
+/* 마우스 커서 */
+
 // 마우스 커서 모양 꾸미기
 const cursor = document.getElementById("cursor")
 window.addEventListener("mousemove", function(e) {
@@ -13,6 +15,13 @@ window.addEventListener("mousemove", function(e) {
         cursor.style.fontSize = "1.3em";
         cursor.style.opacity = "1";
     })
+    // 마우스가 윈도우 너비에서 거의 끝에 가면 div를 없앤다.
+    if (parseInt(cursor.style.left) > window.innerWidth - 80) {
+        cursor.style.display = "none";
+    }
+    else {
+        cursor.style.display = "block";
+    }
 })
 
 /* 헤더 */
@@ -535,13 +544,13 @@ window.addEventListener("resize", function() {
 
 // 도달 시 아이콘이 떠오르고난 후 숫자 카운트
 const count = document.querySelectorAll(".count")
-let countNum = []
+let countNum = [] // 처음 값들 넣어놓기
 let countState = 0;
-let n = 0;
+let bn = [0, 0, 0, 0, 0, 0, 0, 0];
 for (let i=0; i<count.length; i++) {
     countNum.push(count[i].innerText)
 }
-// $("#map .count").text("0")
+$("#map .count").text("0")
 function branchUp() { // 요소들 떠오르기
     $("#mapWrap > p").delay(100).animate({marginTop: 0, opacity: 1}, 500)
     $("#map").delay(200).animate({marginTop: 0, opacity: 1}, 500, function() {
@@ -555,11 +564,10 @@ function branchDown() { // 요소들 내려가기
         backgroundPositionY: 60
     }, 100)
 }
-function branchCount(i) {
-    countState = 1;
-    count[i].innerText = n++;
-    if (n > countNum[i]) return false;
-    else branchTimer = setTimeout(branchCount(i), 20)
+function branchCount(classNum) {
+    count[classNum].innerText = bn[classNum]++;
+    if (bn[classNum] > countNum[classNum]) return false;
+    else branchTimer = setTimeout(branchCount(classNum), 100)
 }
 window.addEventListener("scroll", function() {
     let posY = window.scrollY
@@ -568,28 +576,21 @@ window.addEventListener("scroll", function() {
     if (posY > branchY && branchState == 0) {
         branchState = 1
         branchUp()
+        setTimeout(function() {
+            $("#map .count").each(function() {
+                let className = $(this).parent().attr("class")
+                let classNum = parseInt(className.substr(7, 1)) - 1
+                branchCount(classNum)
+            })
+        }, 500)
     }
     else if (posY < branchY && branchState == 1) {
         branchState = 0
         branchDown()
+        clearTimeout(branchTimer)
+        bn = [0, 0, 0, 0, 0, 0, 0, 0];
+        $("#map .count").text("0")
     }
-    // if (posY > branchY && countState == 0) {
-    //     countState = 1;
-    //     $("#map .count").each(function() {
-    //         let indexN = $(this).parent().index()
-    //         branchCount(indexN)
-            
-    //     })
-    // }
-    // else if (posY < branchY) {
-    //     clearTimeout(branchTimer)
-    //     countState = 0;
-    //     n = 0;
-    //     $("#map .count").each(function() {
-    //         $(this).text("0")
-    //     })
-    // }
-
 })
 
 /* 거래처 회사 */
