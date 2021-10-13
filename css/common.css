@@ -114,7 +114,6 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     width: 90%; margin: 0 auto;
     display: flex; flex-flow: row wrap; justify-content: space-between;
 }
-#menuBig .gnb > li {float: left;}
 #menuBig .gnb > li > a {
     display: block; width: 100%; padding: 20px 0;
     text-align: center; font-size: 1.1em; font-weight: bold;
@@ -128,11 +127,12 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 #menuBig .gnb > li > a.active::after {width: 140%; left: -20%;}
 /* 보조 메뉴 - 1 */
 #menuBig .gnb .one_depth_snb {
-    position: absolute; left: 0; width: 100%; box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    position: absolute; left: 0; width: 100%; box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3);
     background: #fff; padding: 10px 30px;
     display: none;
 }
 #menuBig .gnb .one_depth_snb > li {float: left; width: 16%;}
+#menuBig .gnb .one_depth_snb > li {width: 16%;}
 #menuBig .gnb .one_depth_snb > li > a {
     display: block; padding: 10px 0; font-weight: bold; font-size: 1em;
 }
@@ -549,6 +549,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #header h1 {margin-bottom: 15px; width: 170px; height: 21px;}
     #header h1 a {background-size: 170px;}
     /* 슬라이더 */
+    #main_sliderList {right: 3vw;}
     #main_sliderWrap li a p {font-size: 35px; display: block; padding-left: 0;}
     #main_sliderWrap li a p em {font-size: 70px; -webkit-text-stroke: 1px solid #000;}
     /* 추천해요 */
@@ -624,7 +625,12 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
    /* 거래처 회사들 */
    #clientList li {width: 33.3333%; font-size: 0.9em;}
    /* footer */
+   #link {
+       position: static; margin-top: 20px;
+       display: flex; flex-flow: row wrap; justify-content: flex-end;
+    }
    #customer_call p:last-child {font-size: 35px; width: 100%;}
+   #footerWrap {background-size: 400px; background-position: 20px 270px;}
 }
 @media all and (max-width: 600px) {
     #cbTapWrap ul {grid-template-columns: auto;}
@@ -647,7 +653,6 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #as_recent_product p {display: none;}
     #as_recent_product ul {display: none;}
     /* footer */
-    #footerWrap {background-size: 400px; background-position: 20px 270px;}
     #link {bottom: 30px;}
 }
 @media all and (max-width: 500px) {
@@ -672,6 +677,5 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #map .jeju {top: 445px; left: 50px;}
     /* footer */
     #customer_call p:last-child {font-size: 30px;}
-    #footerWrap {background-size: 300px; background-position: 20px 270px;}
     #customer_call p:last-child {font-size: 35px; background-size: 40px; padding-left: 50px;}
 }
