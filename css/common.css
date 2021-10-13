@@ -652,6 +652,8 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 @media all and (max-width: 500px) {
     #header h1 {width: 120px;}
     #header h1 a {background-size: 120px;}
+    #menuSmall .gnb > li > a {padding: 15px 0; font-size: 0.9em;}
+    #menuSmall .gnb .one_depth_snb > li > a {padding: 15px 0; font-size: 0.9em;}
     #main > section h2 {font-size: 40px; font-family: "SB어그로M", sans-serif;}
     #main_sliderWrap li a p em {font-size: 1.8em;}
     #recommend dl dd a p {font-size: 2em; -webkit-text-stroke-width: 1.5px;}
