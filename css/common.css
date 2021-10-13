@@ -652,7 +652,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     #header h1 {width: 120px;}
     #header h1 a {background-size: 120px;}
     #main > section h2 {font-size: 40px; font-family: "SB어그로M", sans-serif;}
-    #main_sliderWrap li a p {font-family: "SB어그로M", sans-serif;}
+    #main_sliderWrap li a p em {font-family: "SB어그로M", sans-serif;}
     #recommend dl dd a p {font-size: 2em; -webkit-text-stroke-width: 1.5px;}
     #new_move {display: none;}
     #cbTapWrap h3 a {font-size: 0.8em;}
