@@ -651,12 +651,21 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 @media all and (max-width: 500px) {
     #header h1 {width: 120px;}
     #header h1 a {background-size: 120px;}
-    #main > section h2 {font-size: 40px;}
+    #main > section h2 {font-size: 40px; font-family: "SB어그로M", sans-serif;}
     #main_sliderWrap li a p {font-family: "SB어그로M", sans-serif;}
     #recommend dl dd a p {font-size: 2em; -webkit-text-stroke-width: 1.5px;}
     #new_move {display: none;}
     #cbTapWrap h3 a {font-size: 0.8em;}
-    #mapWrap > p span {font-size: 1.3em;}
+    #mapWrap > p span {font-size: 1.3em; font-family: "SB어그로M", sans-serif;}
+    #map {background-size: 300px; width: 300px;}
+    #map .seoul {top: 120px; left: 85px;}
+    #map .incheon {top: 150px; left:60px;}
+    #map .daejeon {top: 230px; left: 115px;}
+    #map .gwangju {top: 335px; left: 65px;}
+    #map .daegu {top: 275px; left: 195px;}
+    #map .busan {top: 325px; left: 235px;}
+    #map .gangwon {top: 115px; left: 195px;}
+    #map .jeju {top: 445px; left: 50px;}
     #footerWrap {background-size: 300px; background-position: 20px 270px;}
     #customer_call p:last-child {font-size: 2em; background-size: 40px; padding-left: 50px;}
 }
