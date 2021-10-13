@@ -54,7 +54,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 #header h1 a {
     display: block; height: 31px;
-    background: url(../svg/crystal-e_logo_head.svg) no-repeat top / 250px;
+    background: url(../svg/crystal-e_logo_head.svg) no-repeat center / 250px;
 }
 /* 검색창 */
 #search {
@@ -411,7 +411,7 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
 }
 #map {
     width: 500px; height: 660px; position: relative; margin: 0 auto; transition-duration: 0.3s;
-    /* opacity: 0; margin-top: 100px; */
+    top: 40vh; transform: translateY(-50%);
     background: url(../svg/map.svg) no-repeat center / 400px;
 }
 #map ul {}
@@ -647,4 +647,16 @@ body::-webkit-scrollbar-thumb {border-radius: 15px; background-color: #045e88;}
     /* footer */
     #footerWrap {background-size: 400px; background-position: 20px 270px;}
     #link {bottom: 30px;}
+}
+@media all and (max-width: 500px) {
+    #header h1 {width: 120px;}
+    #header h1 a {background-size: 120px;}
+    #main > section h2 {font-size: 40px;}
+    #main_sliderWrap li a p {font-family: "SB어그로M", sans-serif;}
+    #recommend dl dd a p {font-size: 2em; -webkit-text-stroke-width: 1.5px;}
+    #new_move {display: none;}
+    #cbTapWrap h3 a {font-size: 0.8em;}
+    #mapWrap > p span {font-size: 1.3em;}
+    #footerWrap {background-size: 300px; background-position: 20px 270px;}
+    #customer_call p:last-child {font-size: 2em; background-size: 40px; padding-left: 50px;}
 }
