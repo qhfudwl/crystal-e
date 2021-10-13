@@ -8,11 +8,11 @@ window.addEventListener("mousemove", function(e) {
     cursor.style.top = mouseY + "px"
     cursor.style.left = mouseX + "px"
     $("a").on("mouseenter", function() {
-        cursor.style.fontSize = "3.5em";
+        cursor.style.fontSize = "50px";
         cursor.style.opacity = "0.5";
     })
     $("a").on("mouseleave", function() {
-        cursor.style.fontSize = "1.3em";
+        cursor.style.fontSize = "20px";
         cursor.style.opacity = "1";
     })
     // 마우스가 윈도우 너비에서 거의 끝에 가면 div를 없앤다.
@@ -462,7 +462,10 @@ window.addEventListener("scroll", function(e) {
     let newY = $("#new").position().top - 500
     let categoryY = $("#categoryBest").position().top - 500
     let branchY = $("#branch").position().top - 500
-    if (window.innerWidth < 600) return false;
+    if (window.innerWidth < 600) {
+        $("#aside_product").stop().fadeIn(100)
+        return false;
+    }
     if ((posY > newY && posY < categoryY) || posY > branchY) {
         $("#aside_product").stop().fadeOut(100)
     }
@@ -535,10 +538,10 @@ let branchState = 0;
 let branchTimer;
 
 // 위치 잡기
-let mapWrapHeight = parseInt($("#mapWrap").height()) / 2
+let mapWrapHeight = parseInt($("#mapWrap").height()) * 0.55
 $("#map").css({top: mapWrapHeight})
 window.addEventListener("resize", function() {
-    mapWrapHeight = parseInt($("#mapWrap").height()) / 2
+    mapWrapHeight = parseInt($("#mapWrap").height()) * 0.55
     $("#map").css({top: mapWrapHeight})
 })
 
@@ -565,9 +568,11 @@ function branchDown() { // 요소들 내려가기
     }, 100)
 }
 function branchCount(classNum) {
-    count[classNum].innerText = bn[classNum]++;
-    if (bn[classNum] > countNum[classNum]) return false;
-    else branchTimer = setTimeout(branchCount(classNum), 100)
+    count[classNum].innerText = ++bn[classNum];
+    if (count[classNum].innerText == countNum[classNum]) return false;
+    setTimeout(function() {
+        branchCount(classNum)
+    }, 10)
 }
 window.addEventListener("scroll", function() {
     let posY = window.scrollY
@@ -576,13 +581,9 @@ window.addEventListener("scroll", function() {
     if (posY > branchY && branchState == 0) {
         branchState = 1
         branchUp()
-        setTimeout(function() {
-            $("#map .count").each(function() {
-                let className = $(this).parent().attr("class")
-                let classNum = parseInt(className.substr(7, 1)) - 1
-                branchCount(classNum)
-            })
-        }, 500)
+        for(let i=0; i<count.length; i++) {
+            branchCount(i)
+        }
     }
     else if (posY < branchY && branchState == 1) {
         branchState = 0
