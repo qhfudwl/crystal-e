@@ -525,6 +525,14 @@ $(".pList a").on("click", function() {
 let branchState = 0;
 let branchTimer;
 
+// 위치 잡기
+let mapWrapHeight = parseInt($("#mapWrap").height()) / 2
+$("#map").css({top: mapWrapHeight})
+window.addEventListener("resize", function() {
+    mapWrapHeight = parseInt($("#mapWrap").height()) / 2
+    $("#map").css({top: mapWrapHeight})
+})
+
 // 도달 시 아이콘이 떠오르고난 후 숫자 카운트
 const count = document.querySelectorAll(".count")
 let countNum = []
