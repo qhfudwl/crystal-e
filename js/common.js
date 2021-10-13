@@ -616,7 +616,7 @@ function branchDown() { // 요소들 내려가기
 function branchCount(classNum) {
     count[classNum].innerText = ++bn[classNum];
     if (count[classNum].innerText == countNum[classNum]) return false;
-    setTimeout(function() {
+    branchTimer = setTimeout(function() {
         branchCount(classNum)
     }, 10)
 }
